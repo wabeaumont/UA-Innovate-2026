@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Secure Healthcare System{% endblock %}
+
+{% block content %}
+<div class="row align-items-center" style="min-height: 70vh;">
+    <div class="col-lg-6">
+        <h1 class="display-4 fw-bold mb-4">Secure Healthcare Portal</h1>
+        <p class="lead mb-4">A HIPAA-compliant platform for managing sensitive patient health information with the highest security standards.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg px-4 me-md-2">
+                <i class="fas fa-sign-in-alt me-2"></i>Login
+            </a>
+            <a href="{{ url_for('register') }}" class="btn btn-outline-secondary btn-lg px-4">
+                <i class="fas fa-user-plus me-2"></i>Register
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card border-0 shadow">
+            <div class="card-body p-4">
+                <h3 class="card-title mb-4">Security Features</h3>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item px-0">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-shield-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h5>AES-256 Encryption</h5>
+                                <p class="text-muted mb-0">All patient data is encrypted at rest and in transit</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item px-0">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-key text-primary"></i>
+                            </div>
+                            <div>
+                                <h5>Two-Factor Authentication</h5>
+                                <p class="text-muted mb-0">Extra layer of security beyond passwords</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item px-0">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-clipboard-check text-primary"></i>
+                            </div>
+                            <div>
+                                <h5>HIPAA Compliant</h5>
+                                <p class="text-muted mb-0">Full compliance with healthcare regulations</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-5">
+    <div class="col-12 text-center">
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading"><i class="fas fa-info-circle me-2"></i>System Security</h4>
+            <p class="mb-0">This healthcare system implements AES-256 encryption and two-factor authentication to protect sensitive patient information.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

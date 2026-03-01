@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile - Secure Healthcare{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h2><i class="fas fa-user-circle me-2"></i>My Profile</h2>
+        <p class="text-muted">View and manage your account information</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Account Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <div class="avatar-placeholder mb-3">
+                        <i class="fas fa-user-circle fa-5x text-primary"></i>
+                    </div>
+                    <h5>{{ current_user.username }}</h5>
+                    <p class="text-muted">{{ current_user.role.capitalize() }}</p>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label text-muted">Username</label>
+                    <p class="form-control-plaintext">{{ current_user.username }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Email</label>
+                    <p class="form-control-plaintext">{{ current_user.email }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Role</label>
+                    <p class="form-control-plaintext">{{ current_user.role.capitalize() }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Account Created</label>
+                    <p class="form-control-plaintext">{{ current_user.created_at.strftime('%Y-%m-%d') }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Last Login</label>
+                    <p class="form-control-plaintext">{{ current_user.last_login.strftime('%Y-%m-%d %H:%M') if current_user.last_login else 'N/A' }}</p>
+                </div>
+                
+                <div class="d-grid mt-4">
+                    <a href="{{ url_for('change_password') }}" class="btn btn-primary">
+                        <i class="fas fa-key me-1"></i> Change Password
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-8">
+        {% if current_user.role == 'patient' %}
+            {% if patient %}
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Personal Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label text-muted">Full Name</label>
+                        <p class="form-control-plaintext">{{ patient.first_name }} {{ patient.last_name }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-muted">Date of Birth</label>
+                        <p class="form-control-plaintext">{{ patient.dob }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-muted">Address</label>
+                        <p class="form-control-plaintext">{{ patient.address }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-muted">Phone</label>
+                        <p class="form-control-plaintext">{{ patient.phone }}</p>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="alert alert-warning mb-0">
+                        <i class="fas fa-exclamation-triangle me-2"></i> You don't have a patient profile yet.
+                        <a href="{{ url_for('create_patient_profile') }}" class="alert-link">Create your profile</a> to access medical records.
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endif %}
+        
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-shield-alt me-1"></i> Security Settings
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div>
+                        <h6 class="mb-0">Two-Factor Authentication</h6>
+                        <p class="text-muted mb-0">
+                            {% if current_user.totp_secret %}
+                            Two-factor authentication is enabled
+                            {% else %}
+                            Two-factor authentication is not enabled
+                            {% endif %}
+                        </p>
+                    </div>
+                    {% if current_user.totp_secret %}
+                    <span class="badge bg-success">Enabled</span>
+                    {% else %}
+                    <span class="badge bg-warning">Disabled</span>
+                    {% endif %}
+                </div>
+                
+                <div class="alert alert-info mt-3 mb-0">
+                    <i class="fas fa-info-circle me-2"></i> All of your actions in this system are securely logged in compliance with HIPAA regulations.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

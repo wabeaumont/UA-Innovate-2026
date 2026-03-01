@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %}Setup Two-Factor Authentication{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <h3>Set Up Two-Factor Authentication</h3>
+                    <p class="text-muted">Enhance your account security with 2FA</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 text-center mb-4">
+                        <h5>1. Scan this QR code</h5>
+                        <div class="p-3 border rounded mb-3 d-flex justify-content-center">
+                            <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code" class="img-fluid" style="max-width: 200px;">
+                        </div>
+                        <p class="text-muted small">Using an authenticator app like Google Authenticator or Authy</p>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h5>2. Verify Setup</h5>
+                        <p>Enter the 6-digit code from your authenticator app to complete setup:</p>
+                        
+                        <form method="POST" action="{{ url_for('complete_2fa_setup') }}">
+                            <div class="mb-4">
+                                <label for="totp_code" class="form-label">Verification Code</label>
+                                <input type="text" class="form-control form-control-lg text-center" id="totp_code" name="totp_code" 
+                                       maxlength="6" autocomplete="one-time-code" pattern="[0-9]{6}" required>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Verify and Activate 2FA</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <div class="alert alert-warning">
+                        <h5 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i>Important!</h5>
+                        <p>If you lose access to your authenticator app, you'll need to contact an administrator to reset your 2FA.</p>
+                        <hr>
+                        <p class="mb-0">
+                            <strong>Secret key (for manual entry):</strong> <code>{{ secret }}</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">How to Set Up an Authenticator App</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Google Authenticator</h6>
+                        <ol>
+                            <li>Download Google Authenticator from your app store</li>
+                            <li>Open the app and tap "+" or "Add"</li>
+                            <li>Select "Scan a QR code" and scan the QR code shown</li>
+                            <li>Enter the 6-digit code shown in the app</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Microsoft Authenticator</h6>
+                        <ol>
+                            <li>Download Microsoft Authenticator from your app store</li>
+                            <li>Open the app and add a new account</li>
+                            <li>Select "Other account" or "Other (Google, Facebook, etc.)"</li>
+                            <li>Scan the QR code and enter the 6-digit code</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

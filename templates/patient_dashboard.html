@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Dashboard - Secure Healthcare{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2><i class="fas fa-user me-2"></i>Patient Dashboard</h2>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt me-1"></i> Logout
+            </a>
+        </div>
+        <p class="text-muted">Welcome, {{ current_user.username }}. View your health information below.</p>
+    </div>
+</div>
+
+{% if not patient %}
+<div class="alert alert-warning">
+    <i class="fas fa-exclamation-triangle me-2"></i> You don't have a patient profile yet.
+    <a href="{{ url_for('create_patient_profile') }}" class="alert-link">Create your profile</a> to access medical records.
+</div>
+{% else %}
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Personal Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label text-muted">Full Name</label>
+                    <p class="form-control-plaintext">{{ patient.first_name }} {{ patient.last_name }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Date of Birth</label>
+                    <p class="form-control-plaintext">{{ patient.dob }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Address</label>
+                    <p class="form-control-plaintext">{{ patient.address }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Phone</label>
+                    <p class="form-control-plaintext">{{ patient.phone }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Doctor</label>
+                    <p class="form-control-plaintext">{{ patient.patient_doctor }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Your Medical Records</h5>
+            </div>
+            <div class="card-body">
+                {% if medical_records %}
+                <div class="accordion" id="recordsAccordion">
+                    {% for record in medical_records %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading{{ record.id }}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse{{ record.id }}" aria-expanded="false" 
+                                    aria-controls="collapse{{ record.id }}">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <div>{{ record.record_type }}</div>
+                                    <small class="text-muted">{{ record.created_at.strftime('%Y-%m-%d') }}</small>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapse{{ record.id }}" class="accordion-collapse collapse" 
+                             aria-labelledby="heading{{ record.id }}" data-bs-parent="#recordsAccordion">
+                            <div class="accordion-body">
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Diagnosis</label>
+                                    <p>{{ record.diagnosis }}</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Treatment</label>
+                                    <p>{{ record.treatment }}</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Medication</label>
+                                    <p>{{ record.medication }}</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Notes</label>
+                                    <p>{{ record.notes }}</p>
+                                </div>
+                                <div class="mb-0">
+                                    <label class="form-label text-muted">Doctor</label>
+                                    <p>Dr. {{ record.doctor.user_first_name }} {{ record.doctor.user_last_name }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="alert alert-info mb-0">
+                    <i class="fas fa-info-circle me-2"></i> You don't have any medical records yet.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

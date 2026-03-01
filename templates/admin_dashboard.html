@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard - Secure Healthcare{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2><i class="fas fa-user-shield me-2"></i>Admin Dashboard</h2>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt me-1"></i> Logout
+            </a>
+        </div>
+        <p class="text-muted">System administration and security monitoring</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">User Management</h5>
+            </div>
+            <a href="{{ url_for('add_user') }}" class="btn btn-primary">
+                <i class="fas fa-user-plus me-1"></i> Add New User
+            </a>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>2FA</th>
+                                <th>Last Login</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td>{{ user.username }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>
+                                    <span class="badge bg-{% if user.role == 'admin' %}danger{% elif user.role == 'doctor' %}primary{% else %}info{% endif %}">
+                                        {{ user.role }}
+                                    </span>
+                                </td>
+                                <td>
+                                    {% if user.totp_secret %}
+                                    <span class="badge bg-success">Enabled</span>
+                                    {% else %}
+                                    <span class="badge bg-warning">Disabled</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ user.last_login.strftime('%Y-%m-%d %H:%M') if user.last_login else 'Never' }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">System Security</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <h5><i class="fas fa-info-circle me-2"></i>Security Information</h5>
+                    <p>This system uses AES-256 encryption for all sensitive healthcare data. Patient information is encrypted at rest and all access is logged in compliance with HIPAA regulations.</p>
+                </div>
+                
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div>
+                        <h6 class="mb-0">Encryption Status</h6>
+                        <small class="text-muted">AES-256 encryption for all sensitive data</small>
+                    </div>
+                    <span class="badge bg-success">Active</span>
+                </div>
+                
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div>
+                        <h6 class="mb-0">Two-Factor Authentication</h6>
+                        <small class="text-muted">Required for all users</small>
+                    </div>
+                    <span class="badge bg-success">Enforced</span>
+                </div>
+                
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div>
+                        <h6 class="mb-0">Session Timeout</h6>
+                        <small class="text-muted">Automatically log out inactive users</small>
+                    </div>
+                    <span>30 minutes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

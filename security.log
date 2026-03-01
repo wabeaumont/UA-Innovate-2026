@@ -1,0 +1,741 @@
+2025-03-30 08:53:13,355 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2025-03-30 08:53:13,463 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 08:53:13,463 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 08:53:13,465 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 08:53:14,410 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2025-03-30 08:53:14,457 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 08:53:14,461 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 08:54:57,136 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2025-03-30 08:54:57,201 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 08:54:57,201 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 08:54:57,203 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 08:54:58,069 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2025-03-30 08:54:58,113 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 08:54:58,117 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 08:56:31,390 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 08:56:31,390 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 08:56:31,391 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 08:56:32,263 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 08:56:32,267 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 08:56:51,179 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:56:51] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 08:56:51,302 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:56:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 08:56:58,809 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:56:58] "GET /login HTTP/1.1" 200 -
+2025-03-30 08:57:22,467 - healthcare_security - INFO - User 1 logged in without 2FA
+2025-03-30 08:57:22,468 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:57:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 08:57:22,503 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:57:22] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 08:57:22,768 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:57:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 08:58:51,106 - healthcare_security - INFO - User 1 logged out
+2025-03-30 08:58:51,107 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:58:51] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 08:58:51,125 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:58:51] "GET /login HTTP/1.1" 200 -
+2025-03-30 08:58:51,376 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:58:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 08:58:56,880 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 08:58:56,882 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:58:56] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 08:58:56,914 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 08:58:56,926 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:58:56] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 08:58:57,156 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:58:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 08:59:04,845 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 1 by user 2
+2025-03-30 08:59:04,860 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:59:04] "GET /patient/1 HTTP/1.1" 200 -
+2025-03-30 08:59:19,223 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:59:19] "GET /patient/1/add-record HTTP/1.1" 200 -
+2025-03-30 08:59:50,170 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 1 by user 2
+2025-03-30 08:59:50,173 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:59:50] "GET /patient/1 HTTP/1.1" 200 -
+2025-03-30 08:59:52,540 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 08:59:52,542 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:59:52] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 08:59:54,655 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:59:54] "GET /patient/1/add-record HTTP/1.1" 200 -
+2025-03-30 08:59:56,506 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 1 by user 2
+2025-03-30 08:59:56,509 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 08:59:56] "GET /patient/1 HTTP/1.1" 200 -
+2025-03-30 09:04:49,512 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 09:04:49,675 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:04:50,640 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:04:50,644 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:06:34,113 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 09:06:34,281 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:06:35,214 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:06:35,219 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:08:27,716 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 09:08:27,856 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:08:28,787 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:08:28,791 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:14:06,199 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:14:06] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 09:14:06,239 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:14:06] "GET /login HTTP/1.1" 200 -
+2025-03-30 09:14:07,927 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:14:07] "GET /register HTTP/1.1" 200 -
+2025-03-30 09:16:11,828 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 09:16:11,989 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:16:13,008 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:16:13,011 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:28:29,422 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:28:29] "GET /login HTTP/1.1" 200 -
+2025-03-30 09:28:37,728 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:28:37] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-03-30 09:28:37,977 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:28:37] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-30 09:28:37,979 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:28:37] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-30 09:28:38,056 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:28:38] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=QEImCUkh1dHQryQnmsmP HTTP/1.1" 200 -
+2025-03-30 09:28:38,074 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:28:38] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-30 09:31:17,979 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 09:31:18,136 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:31:19,195 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:31:19,199 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:33:41,807 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 09:33:41,960 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:33:43,029 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:33:43,033 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:45:38,203 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 09:45:38,347 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:45:39,406 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:45:39,410 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:46:55,761 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 09:46:55,901 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:46:56,895 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:46:56,898 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:47:37,090 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 09:47:37,229 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:47:38,253 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:47:38,257 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:49:32,070 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 09:49:32,071 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 09:49:32,072 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:49:33,066 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:49:33,070 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:50:21,690 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:50:21] "[35m[1mGET /init-db HTTP/1.1[0m" 500 -
+2025-03-30 09:58:10,263 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 09:58:10,263 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 09:58:10,264 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 09:58:11,197 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 09:58:11,201 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 09:58:23,345 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:23] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 09:58:23,497 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 09:58:28,546 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:28] "GET /login HTTP/1.1" 200 -
+2025-03-30 09:58:38,946 - healthcare_security - INFO - User 3 logged in without 2FA
+2025-03-30 09:58:38,948 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 09:58:38,993 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 1 by user 3
+2025-03-30 09:58:39,014 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:39] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 09:58:39,264 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 09:58:49,071 - healthcare_security - INFO - User 3 logged out
+2025-03-30 09:58:49,072 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 09:58:49,097 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:49] "GET /login HTTP/1.1" 200 -
+2025-03-30 09:58:49,336 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 09:58:55,007 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 09:58:55,009 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 09:58:55,040 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 09:58:55,051 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:55] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 09:58:55,298 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:58:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 09:59:03,586 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 09:59:03] "GET /add-patient HTTP/1.1" 200 -
+2025-03-30 10:01:12,656 - healthcare_security - ERROR - Error adding patient: (sqlite3.IntegrityError) NOT NULL constraint failed: user.user_first_name
+[SQL: INSERT INTO user (username, user_first_name, user_last_name, password_hash, email, role, totp_secret, is_active, created_at, last_login) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('News12', None, None, 'scrypt:32768:8:1$5sLpjyb9NlPBZSqT$673b577608cc674127dcfb4974e392af117e2fd284bb98c96ecc1625318defd61e6635a8d69f0dc5417f5bbdab9e5a9a49c954d83e12ae6207b165e03ec70dfb', 'News12@gmail.com', 'patient', '2YQVMJMUM4JYXIVFNKT3Y2VS4RTJQGQZ', 1, '2025-03-30 15:01:12.655815', None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-30 10:01:12,659 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:01:12] "POST /add-patient HTTP/1.1" 200 -
+2025-03-30 10:01:12,927 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:01:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:08:18,855 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:08:19,010 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:08:20,096 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:08:20,101 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:11:48,035 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:11:48,186 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:11:49,228 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:11:49,232 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:12:58,539 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:12:58,676 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:12:59,805 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:12:59,809 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:14:26,208 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:14:26,361 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:14:27,395 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:14:27,399 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:15:04,563 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:15:04,711 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:15:05,702 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:15:05,706 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:15:44,830 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 10:15:44,830 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 10:15:44,831 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:15:45,771 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:15:45,775 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:15:55,882 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:15:55] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 10:16:24,726 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:16:24] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:16:31,360 - healthcare_security - WARNING - Failed login attempt for username: doctor
+2025-03-30 10:16:31,362 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:16:31] "POST /login HTTP/1.1" 200 -
+2025-03-30 10:16:31,609 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:16:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:16:44,537 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 10:16:44,539 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:16:44] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:16:44,579 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:16:44,597 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:16:44] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:16:44,845 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:16:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:16:52,243 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 1 by user 2
+2025-03-30 10:16:52,258 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:16:52] "GET /patient/1 HTTP/1.1" 200 -
+2025-03-30 10:16:54,161 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:16:54] "GET /patient/1/add-record HTTP/1.1" 200 -
+2025-03-30 10:17:29,036 - healthcare_security - INFO - Action logged: CREATE on MedicalRecord with ID 2 by user 2
+2025-03-30 10:17:29,038 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:17:29] "[32mPOST /patient/1/add-record HTTP/1.1[0m" 302 -
+2025-03-30 10:17:29,074 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 1 by user 2
+2025-03-30 10:17:29,082 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:17:29] "GET /patient/1 HTTP/1.1" 200 -
+2025-03-30 10:17:29,319 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:17:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:17:35,839 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:17:35,841 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:17:35] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:17:36,974 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:17:36] "GET /add-patient HTTP/1.1" 200 -
+2025-03-30 10:18:32,563 - healthcare_security - ERROR - Error adding patient: (sqlite3.IntegrityError) NOT NULL constraint failed: user.user_first_name
+[SQL: INSERT INTO user (username, user_first_name, user_last_name, password_hash, email, role, totp_secret, is_active, created_at, last_login) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Patient12', None, None, 'scrypt:32768:8:1$Ji8IqloMGyzU2bzV$09669d5fff71c4e7611fae4f37de108d955cbbe15c5356bbb44104cf7008d8c7c66eb065aa7f2cea0f6c7b22c60afa62caf80735be9674f8dacde64a84766cbc', 'patient12@gmail.com', 'patient', 'NCNVUUTTVPYMQP2XUACGWEJ4CC26F5VK', 1, '2025-03-30 15:18:32.562694', None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-30 10:18:32,567 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:18:32] "POST /add-patient HTTP/1.1" 200 -
+2025-03-30 10:18:32,818 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:18:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:25:10,716 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 10:25:10,716 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 10:25:10,717 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:25:11,744 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:25:11,748 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:25:15,922 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:25:15] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 10:25:17,108 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:25:17] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:25:22,062 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 10:25:22,064 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:25:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:25:22,105 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:25:22,118 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:25:22] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:25:22,357 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:25:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:25:23,711 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:25:23] "GET /add-patient HTTP/1.1" 200 -
+2025-03-30 10:26:07,572 - healthcare_security - ERROR - Error adding patient: (sqlite3.IntegrityError) NOT NULL constraint failed: user.user_first_name
+[SQL: INSERT INTO user (username, user_first_name, user_last_name, password_hash, email, role, totp_secret, is_active, created_at, last_login) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('qwe', None, None, 'scrypt:32768:8:1$aWbRdyW9s9H1X7C5$6e992fef6d050104aa31b8cc0cfbbf7f7ff66a8cf12c29e73e3a1a2161ef38316e24630af22f9f2569dfcde4c739a1071b41805d6345e6c02e42c49a6d4fd55e', 'qweqe@effwn', 'patient', 'WKWB5SZ4YCJ3HGDWODFS7E5SMQRGH6L2', 1, '2025-03-30 15:26:07.570743', None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-30 10:26:07,575 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:26:07] "POST /add-patient HTTP/1.1" 200 -
+2025-03-30 10:26:07,822 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:26:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:26:16,728 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:26:16,729 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:26:16] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:26:47,344 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:26:47] "GET /add-patient HTTP/1.1" 200 -
+2025-03-30 10:27:14,492 - healthcare_security - ERROR - Error adding patient: (sqlite3.IntegrityError) NOT NULL constraint failed: user.user_first_name
+[SQL: INSERT INTO user (username, user_first_name, user_last_name, password_hash, email, role, totp_secret, is_active, created_at, last_login) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('gwerger', None, None, 'scrypt:32768:8:1$9EOqMBLxkovkZw5e$91ee742e14046d1d1651afe5ac4cfbb9b4168f6468148a23b37b28bcc4c4ee0d41304cdb9fbfbe76b5223618f38d34d6d6e5463be6f6c422eb65c2cd742807e5', 'gregerg@rgheir', 'patient', '4Y4HSNOQ3G44LLIIQLAPHEZYV6RUHZAR', 1, '2025-03-30 15:27:14.491602', None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-30 10:27:14,495 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:27:14] "POST /add-patient HTTP/1.1" 200 -
+2025-03-30 10:27:14,723 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:27:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:28:07,648 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:28:07,649 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:28:07] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:28:10,671 - healthcare_security - INFO - User 2 logged out
+2025-03-30 10:28:10,672 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:28:10] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 10:28:10,691 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:28:10] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:28:10,928 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:28:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:28:45,734 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:28:45,958 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:30:47,239 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 10:30:47,239 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 10:30:47,240 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:30:48,287 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:30:48,291 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:30:54,950 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:30:54] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 10:30:56,314 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:30:56] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:31:01,221 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 10:31:01,223 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:31:01] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:31:01,258 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:31:01,271 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:31:01] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:31:01,528 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:31:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:31:05,517 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:31:05] "GET /add-patient HTTP/1.1" 200 -
+2025-03-30 10:31:31,422 - healthcare_security - ERROR - Patient added successfully! Temporary password: Z_MKYuGmaX4EzA', 'success
+2025-03-30 10:31:31,426 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:31:31] "POST /add-patient HTTP/1.1" 200 -
+2025-03-30 10:31:31,646 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:31:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:32:13,687 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:32:13,836 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:32:14,929 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:32:14,933 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:32:23,163 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 10:32:23,163 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 10:32:23,164 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:32:24,127 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:32:24,131 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:32:28,818 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:32:28] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 10:32:30,131 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:32:30] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:32:38,009 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 10:32:38,011 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:32:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:32:38,050 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:32:38,062 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:32:38] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:32:38,313 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:32:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:32:39,410 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:32:39] "GET /add-patient HTTP/1.1" 200 -
+2025-03-30 10:33:04,250 - healthcare_security - ERROR - Patient added successfully! Temporary password: EHrWXflo6VGgJA', 'success
+2025-03-30 10:33:04,253 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:33:04] "POST /add-patient HTTP/1.1" 200 -
+2025-03-30 10:33:04,465 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:33:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:33:17,376 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:33:17,527 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:33:18,642 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:33:18,645 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:33:27,827 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 10:33:27,827 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 10:33:27,828 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:33:28,859 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:33:28,864 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:33:33,031 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:33:33] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 10:33:34,064 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:33:34] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:33:38,727 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 10:33:38,729 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:33:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:33:38,766 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:33:38,779 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:33:38] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:33:39,017 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:33:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:33:40,134 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:33:40] "GET /add-patient HTTP/1.1" 200 -
+2025-03-30 10:34:03,271 - healthcare_security - ERROR - Patient added successfully! Temporary password: W9DLN6dA7uLOEA', 'success
+2025-03-30 10:34:03,318 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:34:03] "[35m[1mPOST /add-patient HTTP/1.1[0m" 500 -
+2025-03-30 10:34:03,573 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:34:03] "GET /add-patient?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-30 10:34:03,574 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:34:03] "GET /add-patient?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-30 10:34:03,633 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:34:03] "GET /add-patient?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-30 10:34:03,638 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:34:03] "GET /add-patient?__debugger__=yes&cmd=resource&f=console.png&s=5PBOqDnXBCrJJPzDg5P1 HTTP/1.1" 200 -
+2025-03-30 10:36:27,645 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:36:27,802 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:36:28,814 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:36:28,818 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:36:54,682 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 10:36:54,683 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 10:36:54,684 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:36:55,635 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:36:55,640 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:36:58,727 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:36:58] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 10:36:59,597 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:36:59] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:37:04,371 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 10:37:04,373 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:37:04,402 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:37:04,416 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:04] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:37:04,643 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:37:05,663 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:05] "GET /add-patient HTTP/1.1" 200 -
+2025-03-30 10:37:26,499 - healthcare_security - INFO - Action logged: CREATE on Patient with ID 2 by user 2
+2025-03-30 10:37:26,501 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:26] "[32mPOST /add-patient HTTP/1.1[0m" 302 -
+2025-03-30 10:37:26,541 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 2 by user 2
+2025-03-30 10:37:26,562 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:26] "GET /patient/2 HTTP/1.1" 200 -
+2025-03-30 10:37:26,800 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:37:45,233 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:45] "GET /patient/2/add-record HTTP/1.1" 200 -
+2025-03-30 10:37:52,664 - healthcare_security - INFO - Action logged: CREATE on MedicalRecord with ID 3 by user 2
+2025-03-30 10:37:52,666 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:52] "[32mPOST /patient/2/add-record HTTP/1.1[0m" 302 -
+2025-03-30 10:37:52,702 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 2 by user 2
+2025-03-30 10:37:52,707 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:52] "GET /patient/2 HTTP/1.1" 200 -
+2025-03-30 10:37:52,942 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:37:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:38:20,463 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:38:20,466 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:38:20] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:39:34,367 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:39:34,521 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:40:44,149 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 10:40:44,149 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 10:40:44,150 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:40:45,151 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:40:45,155 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:40:46,646 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:40:46] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 10:40:46,682 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:40:46] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:40:52,721 - healthcare_security - INFO - User 1 logged in without 2FA
+2025-03-30 10:40:52,723 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:40:52] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:40:52,757 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:40:52] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:40:52,994 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:40:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:41:05,483 - healthcare_security - INFO - User 1 logged out
+2025-03-30 10:41:05,484 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:41:05] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 10:41:05,501 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:41:05] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:41:05,742 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:41:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:41:07,818 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:41:07] "GET /register HTTP/1.1" 200 -
+2025-03-30 10:41:35,200 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:41:35] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-30 10:41:35,436 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:41:35] "GET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-30 10:41:35,438 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:41:35] "GET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-30 10:41:35,523 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:41:35] "GET /register?__debugger__=yes&cmd=resource&f=console.png&s=kDc4n753sa80E4cdshpO HTTP/1.1" 200 -
+2025-03-30 10:41:35,542 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:41:35] "GET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-30 10:42:16,565 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:42:16,746 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:42:17,723 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:42:17,727 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:42:31,800 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:42:31,997 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:43:50,756 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 10:43:50,756 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 10:43:50,757 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:43:51,677 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:43:51,680 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 10:43:55,320 - healthcare_security - INFO - New user registered: 5 - WilliamsTest
+2025-03-30 10:43:55,321 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:43:55] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-03-30 10:43:55,449 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:43:55] "GET /setup-2fa HTTP/1.1" 200 -
+2025-03-30 10:43:55,689 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:43:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:44:40,412 - healthcare_security - INFO - User 5 completed 2FA setup
+2025-03-30 10:44:40,413 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:44:40] "[32mPOST /complete-2fa-setup HTTP/1.1[0m" 302 -
+2025-03-30 10:44:40,440 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:44:40] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:44:40,756 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:44:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:44:49,927 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:44:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:44:49,944 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:44:49] "GET /verify-2fa HTTP/1.1" 200 -
+2025-03-30 10:44:50,180 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:44:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:44:53,648 - healthcare_security - INFO - User 5 completed 2FA authentication
+2025-03-30 10:44:53,650 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:44:53] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2025-03-30 10:44:53,694 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:44:53] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:44:53,945 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:44:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:44:56,548 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:44:56] "GET /create-patient-profile HTTP/1.1" 200 -
+2025-03-30 10:45:30,070 - healthcare_security - INFO - Action logged: CREATE on Patient with ID 3 by user 5
+2025-03-30 10:45:30,071 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:45:30] "[32mPOST /create-patient-profile HTTP/1.1[0m" 302 -
+2025-03-30 10:45:30,108 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 3 by user 5
+2025-03-30 10:45:30,111 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:45:30] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:45:30,377 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:45:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:48:22,840 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 3 by user 5
+2025-03-30 10:48:22,844 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:48:22] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:50:31,243 - healthcare_security - INFO - User 5 logged out
+2025-03-30 10:50:31,244 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:50:31] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 10:50:31,256 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:50:31] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:50:31,393 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:50:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:50:39,311 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 10:50:39,312 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:50:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:50:39,329 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 10:50:39,340 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:50:39] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:50:39,464 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:50:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:50:47,296 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 3 by user 2
+2025-03-30 10:50:47,303 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:50:47] "GET /patient/3 HTTP/1.1" 200 -
+2025-03-30 10:50:50,719 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:50:50] "GET /patient/3/add-record HTTP/1.1" 200 -
+2025-03-30 10:51:12,125 - healthcare_security - INFO - Action logged: CREATE on MedicalRecord with ID 4 by user 2
+2025-03-30 10:51:12,126 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:51:12] "[32mPOST /patient/3/add-record HTTP/1.1[0m" 302 -
+2025-03-30 10:51:12,142 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 3 by user 2
+2025-03-30 10:51:12,146 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:51:12] "GET /patient/3 HTTP/1.1" 200 -
+2025-03-30 10:51:12,266 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:51:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:54:05,180 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 3 by user 2
+2025-03-30 10:54:05,193 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:54:05] "GET /patient/3 HTTP/1.1" 200 -
+2025-03-30 10:54:33,140 - healthcare_security - INFO - User 2 logged out
+2025-03-30 10:54:33,141 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:54:33] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 10:54:33,152 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:54:33] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:54:33,275 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:54:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:54:39,356 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:54:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:54:39,362 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:54:39] "GET /verify-2fa HTTP/1.1" 200 -
+2025-03-30 10:54:39,492 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:54:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:54:44,803 - healthcare_security - INFO - User 5 completed 2FA authentication
+2025-03-30 10:54:44,803 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:54:44] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2025-03-30 10:54:44,820 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 3 by user 5
+2025-03-30 10:54:44,826 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:54:44] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:54:44,946 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:54:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:55:20,294 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 3 by user 5
+2025-03-30 10:55:20,305 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:55:20] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:55:40,971 - healthcare_security - INFO - User 5 logged out
+2025-03-30 10:55:40,971 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:55:40] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 10:55:40,983 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:55:40] "GET /login HTTP/1.1" 200 -
+2025-03-30 10:55:41,111 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:55:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:55:45,105 - healthcare_security - INFO - User 1 logged in without 2FA
+2025-03-30 10:55:45,106 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:55:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 10:55:45,120 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:55:45] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:55:45,238 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:55:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 10:57:42,030 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:57:42] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:57:58,728 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 10:57:58] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 10:58:59,676 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 10:58:59,805 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 10:59:00,428 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 10:59:00,431 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 11:02:43,026 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 11:02:43,131 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 11:02:43,781 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 11:02:43,784 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 11:02:56,823 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 11:02:56,926 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 11:02:57,464 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 11:02:57,467 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 11:05:27,875 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 11:05:27,977 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 11:05:28,508 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 11:05:28,510 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 11:05:30,671 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:05:30] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-03-30 11:05:30,692 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:05:30] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2025-03-30 11:05:30,830 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:05:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:05:36,040 - healthcare_security - INFO - User 1 logged in without 2FA
+2025-03-30 11:05:36,042 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:05:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 11:05:36,061 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:05:36] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:05:36,196 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:05:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:05:38,031 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:05:38] "GET /add-patient HTTP/1.1" 200 -
+2025-03-30 11:06:10,514 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:06:10] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:06:11,455 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:06:11] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:06:12,623 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:06:12] "GET /add-user HTTP/1.1" 200 -
+2025-03-30 11:06:48,156 - healthcare_security - INFO - Action logged: CREATE on Dr. Doc Two with ID 6 by user 1
+2025-03-30 11:06:48,157 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:06:48] "POST /add-user HTTP/1.1" 200 -
+2025-03-30 11:06:48,286 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:06:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:06:52,934 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:06:52] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:07:43,275 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:07:43] "GET /add-user HTTP/1.1" 200 -
+2025-03-30 11:08:10,033 - healthcare_security - INFO - Action logged: CREATE on doctor with ID 7 by user 1
+2025-03-30 11:08:10,034 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:08:10] "POST /add-user HTTP/1.1" 200 -
+2025-03-30 11:08:10,164 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:08:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:08:12,129 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:08:12] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:08:40,353 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:08:40] "GET /add-user HTTP/1.1" 200 -
+2025-03-30 11:09:11,089 - healthcare_security - INFO - Action logged: CREATE on doctor with ID 8 by user 1
+2025-03-30 11:09:11,090 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:09:11] "POST /add-user HTTP/1.1" 200 -
+2025-03-30 11:09:11,229 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:09:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:09:16,329 - healthcare_security - INFO - User 1 logged out
+2025-03-30 11:09:16,330 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:09:16] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 11:09:16,343 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:09:16] "GET /login HTTP/1.1" 200 -
+2025-03-30 11:09:16,475 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:09:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:09:22,742 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:09:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 11:09:22,751 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:09:22] "GET /verify-2fa HTTP/1.1" 200 -
+2025-03-30 11:09:22,868 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:09:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:12:45,519 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:12:45] "GET /login HTTP/1.1" 200 -
+2025-03-30 11:12:49,759 - healthcare_security - INFO - User 1 logged in without 2FA
+2025-03-30 11:12:49,759 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:12:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 11:12:49,769 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:12:49] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:12:49,904 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:12:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:12:52,268 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:12:52] "GET /add-user HTTP/1.1" 200 -
+2025-03-30 11:13:29,789 - healthcare_security - INFO - Action logged: CREATE on doctor with ID 9 by user 1
+2025-03-30 11:13:29,791 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:13:29] "POST /add-user HTTP/1.1" 200 -
+2025-03-30 11:13:29,962 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:13:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:16:21,262 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 11:16:21,374 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 11:16:21,977 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 11:16:21,979 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 11:16:25,502 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:16:25] "[32mPOST /add-user HTTP/1.1[0m" 302 -
+2025-03-30 11:16:25,529 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:16:25] "GET /login?next=/add-user HTTP/1.1" 200 -
+2025-03-30 11:16:25,652 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:16:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:16:29,828 - healthcare_security - INFO - User 1 logged in without 2FA
+2025-03-30 11:16:29,829 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:16:29] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 11:16:29,849 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:16:29] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:16:29,966 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:16:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:16:31,271 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:16:31] "GET /add-user HTTP/1.1" 200 -
+2025-03-30 11:16:51,674 - healthcare_security - INFO - Action logged: CREATE on doctor with ID 10 by user 1
+2025-03-30 11:16:51,676 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:16:51] "POST /add-user HTTP/1.1" 200 -
+2025-03-30 11:16:51,807 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:16:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:17:11,114 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willb\\OneDrive\\Documents\\UA Innovate\\2025\\HealthcareSys\\app.py', reloading
+2025-03-30 11:17:11,222 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 11:17:11,906 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 11:17:11,908 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 11:21:44,509 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 11:21:44,509 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 11:21:44,510 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 11:21:45,106 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 11:21:45,108 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 11:22:00,561 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:22:00] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 11:22:05,701 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:22:05] "GET /login HTTP/1.1" 200 -
+2025-03-30 11:22:14,241 - healthcare_security - INFO - User 1 logged in without 2FA
+2025-03-30 11:22:14,242 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:22:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 11:22:14,263 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:22:14] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:22:14,386 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:22:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:22:22,978 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:22:22] "GET /add-user HTTP/1.1" 200 -
+2025-03-30 11:23:19,491 - healthcare_security - INFO - Action logged: CREATE on patient with ID 4 by user 1
+2025-03-30 11:23:19,492 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:23:19] "POST /add-user HTTP/1.1" 200 -
+2025-03-30 11:23:19,631 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:23:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:23:31,018 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:23:31] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:23:35,248 - healthcare_security - INFO - User 1 logged out
+2025-03-30 11:23:35,249 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:23:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 11:23:35,258 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:23:35] "GET /login HTTP/1.1" 200 -
+2025-03-30 11:23:35,380 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:23:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:23:52,414 - healthcare_security - WARNING - Failed login attempt for username: Drak12
+2025-03-30 11:23:52,416 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:23:52] "POST /login HTTP/1.1" 200 -
+2025-03-30 11:23:52,527 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:23:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:24:07,089 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:24:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 11:24:07,103 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:24:07] "GET /verify-2fa HTTP/1.1" 200 -
+2025-03-30 11:24:07,230 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:24:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:24:49,465 - healthcare_security - INFO - User 4 completed 2FA authentication
+2025-03-30 11:24:49,466 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:24:49] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2025-03-30 11:24:49,492 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:24:49] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:24:49,636 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:24:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:24:53,770 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:24:53] "GET /create-patient-profile HTTP/1.1" 200 -
+2025-03-30 11:25:31,164 - healthcare_security - INFO - Action logged: CREATE on Patient with ID 2 by user 4
+2025-03-30 11:25:31,165 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:31] "[32mPOST /create-patient-profile HTTP/1.1[0m" 302 -
+2025-03-30 11:25:31,183 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 2 by user 4
+2025-03-30 11:25:31,184 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:31] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:25:31,328 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:25:41,256 - healthcare_security - INFO - User 4 logged out
+2025-03-30 11:25:41,257 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:41] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 11:25:41,267 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:41] "GET /login HTTP/1.1" 200 -
+2025-03-30 11:25:41,382 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:25:49,722 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 11:25:49,723 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 11:25:49,737 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 11:25:49,744 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:49] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:25:49,871 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:25:53,525 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 2 by user 2
+2025-03-30 11:25:53,532 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:53] "GET /patient/2 HTTP/1.1" 200 -
+2025-03-30 11:25:58,287 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 11:25:58,288 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:58] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:25:59,737 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 1 by user 2
+2025-03-30 11:25:59,739 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:25:59] "GET /patient/1 HTTP/1.1" 200 -
+2025-03-30 11:26:08,207 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:08] "GET /patient/1/add-record HTTP/1.1" 200 -
+2025-03-30 11:26:35,746 - healthcare_security - INFO - Action logged: CREATE on MedicalRecord with ID 2 by user 2
+2025-03-30 11:26:35,747 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:35] "[32mPOST /patient/1/add-record HTTP/1.1[0m" 302 -
+2025-03-30 11:26:35,766 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 1 by user 2
+2025-03-30 11:26:35,770 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:35] "GET /patient/1 HTTP/1.1" 200 -
+2025-03-30 11:26:35,895 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:26:44,695 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 11:26:44,696 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:44] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:26:50,027 - healthcare_security - INFO - User 2 logged out
+2025-03-30 11:26:50,028 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:50] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 11:26:50,038 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:50] "GET /login HTTP/1.1" 200 -
+2025-03-30 11:26:50,171 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:26:54,862 - healthcare_security - INFO - User 3 logged in without 2FA
+2025-03-30 11:26:54,863 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:54] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 11:26:54,878 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 1 by user 3
+2025-03-30 11:26:54,882 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:54] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:26:55,006 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:26:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:27:06,260 - healthcare_security - INFO - User 3 logged out
+2025-03-30 11:27:06,261 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:06] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 11:27:06,271 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:06] "GET /login HTTP/1.1" 200 -
+2025-03-30 11:27:06,394 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:27:09,726 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:09] "GET /register HTTP/1.1" 200 -
+2025-03-30 11:27:28,122 - healthcare_security - INFO - New user registered: 5 - WilliamsTest
+2025-03-30 11:27:28,124 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:28] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-03-30 11:27:28,183 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:28] "GET /setup-2fa HTTP/1.1" 200 -
+2025-03-30 11:27:28,308 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:27:49,305 - healthcare_security - INFO - User 5 completed 2FA setup
+2025-03-30 11:27:49,306 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:49] "[32mPOST /complete-2fa-setup HTTP/1.1[0m" 302 -
+2025-03-30 11:27:49,317 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:49] "GET /login HTTP/1.1" 200 -
+2025-03-30 11:27:49,444 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:27:57,077 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 11:27:57,087 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:57] "GET /verify-2fa HTTP/1.1" 200 -
+2025-03-30 11:27:57,218 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:27:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:28:03,909 - healthcare_security - INFO - User 5 completed 2FA authentication
+2025-03-30 11:28:03,910 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:28:03] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2025-03-30 11:28:03,921 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:28:03] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:28:04,044 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:28:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:28:07,615 - healthcare_security - INFO - User 5 logged out
+2025-03-30 11:28:07,616 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:28:07] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 11:28:07,626 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:28:07] "GET /login HTTP/1.1" 200 -
+2025-03-30 11:28:07,747 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:28:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:54:39,544 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:54:39] "GET /register HTTP/1.1" 200 -
+2025-03-30 11:56:59,159 - healthcare_security - INFO - New user registered: 6 - as
+2025-03-30 11:56:59,160 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:56:59] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-03-30 11:56:59,206 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:56:59] "GET /setup-2fa HTTP/1.1" 200 -
+2025-03-30 11:56:59,465 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:56:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:58:21,675 - healthcare_security - INFO - User 6 completed 2FA setup
+2025-03-30 11:58:21,676 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:58:21] "[32mPOST /complete-2fa-setup HTTP/1.1[0m" 302 -
+2025-03-30 11:58:21,696 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:58:21] "GET /login HTTP/1.1" 200 -
+2025-03-30 11:58:21,978 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:58:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:59:07,089 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:59:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 11:59:07,104 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:59:07] "GET /verify-2fa HTTP/1.1" 200 -
+2025-03-30 11:59:07,365 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:59:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 11:59:37,729 - healthcare_security - INFO - User 6 completed 2FA authentication
+2025-03-30 11:59:37,731 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:59:37] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2025-03-30 11:59:37,751 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:59:37] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 11:59:38,038 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 11:59:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 12:02:58,078 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:02:58] "GET /create-patient-profile HTTP/1.1" 200 -
+2025-03-30 12:03:30,083 - healthcare_security - INFO - User 6 logged out
+2025-03-30 12:03:30,084 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:03:30] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 12:03:30,107 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:03:30] "GET /login HTTP/1.1" 200 -
+2025-03-30 12:03:30,366 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:03:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 12:03:36,895 - healthcare_security - INFO - User 3 logged in without 2FA
+2025-03-30 12:03:36,897 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:03:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 12:03:36,924 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 1 by user 3
+2025-03-30 12:03:36,930 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:03:36] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 12:03:37,180 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:03:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 12:04:57,006 - healthcare_security - INFO - User 3 logged out
+2025-03-30 12:04:57,007 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:04:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 12:04:57,026 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:04:57] "GET /login HTTP/1.1" 200 -
+2025-03-30 12:04:57,311 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:04:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 12:05:02,173 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 12:05:02,175 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:05:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 12:05:02,200 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 12:05:02,204 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:05:02] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 12:05:02,476 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:05:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 12:05:40,335 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 1 by user 2
+2025-03-30 12:05:40,338 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:05:40] "GET /patient/1 HTTP/1.1" 200 -
+2025-03-30 12:05:44,629 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 12:05:44,631 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:05:44] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 12:10:15,218 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:10:15] "GET /add-patient HTTP/1.1" 200 -
+2025-03-30 12:11:09,490 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:11:09] "POST /add-patient HTTP/1.1" 200 -
+2025-03-30 12:11:09,769 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:11:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 12:11:40,447 - healthcare_security - INFO - Action logged: CREATE on Patient with ID 3 by user 2
+2025-03-30 12:11:40,450 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:11:40] "[32mPOST /add-patient HTTP/1.1[0m" 302 -
+2025-03-30 12:11:40,488 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 3 by user 2
+2025-03-30 12:11:40,491 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:11:40] "GET /patient/3 HTTP/1.1" 200 -
+2025-03-30 12:11:40,736 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:11:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 12:13:08,230 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 12:13:08,232 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:13:08] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 12:14:49,210 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:14:49] "GET /patient/1/add-record HTTP/1.1" 200 -
+2025-03-30 12:15:21,915 - healthcare_security - INFO - Action logged: CREATE on MedicalRecord with ID 3 by user 2
+2025-03-30 12:15:21,917 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:15:21] "[32mPOST /patient/1/add-record HTTP/1.1[0m" 302 -
+2025-03-30 12:15:21,952 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 1 by user 2
+2025-03-30 12:15:21,960 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:15:21] "GET /patient/1 HTTP/1.1" 200 -
+2025-03-30 12:15:22,243 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:15:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 12:15:52,698 - healthcare_security - INFO - User 2 logged out
+2025-03-30 12:15:52,699 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:15:52] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 12:15:52,719 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:15:52] "GET /login HTTP/1.1" 200 -
+2025-03-30 12:15:52,960 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:15:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 12:15:57,459 - healthcare_security - INFO - User 1 logged in without 2FA
+2025-03-30 12:15:57,460 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:15:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 12:15:57,485 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:15:57] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 12:15:57,812 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:15:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 12:17:34,047 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:17:34] "GET /add-user HTTP/1.1" 200 -
+2025-03-30 12:28:36,396 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 12:28:36,396 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 12:28:36,397 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 12:28:37,579 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 12:28:37,588 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 12:28:42,186 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:28:42] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 12:33:04,034 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 12:33:04] "GET /login HTTP/1.1" 200 -
+2025-03-30 13:23:22,865 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 13:23:22,865 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 13:23:22,866 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 13:23:23,384 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 13:23:23,386 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 13:23:31,907 - werkzeug - ERROR - 127.0.0.1 - - [30/Mar/2025 13:23:31] code 400, message Bad request version ('\x19üf²\x05\x8bx\x0fÀÚpp\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+2025-03-30 13:23:31,907 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:31] "[31m[1m\x16\x03\x01\x07O\x01\x00\x07K\x03\x03½@´|}8\x15D\x10\x09\x90§Æ\x10\x0f×\x80õØ\x1b\x10ãjLS\x86í\x97±\x1a\x96\x00 \x17W\x0b\x87\x04<Q\x95¥®>å«»Ê¡!\x16î\x09\x19üf²\x05\x8bx\x0fÀÚpp\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À[0m" 400 -
+2025-03-30 13:23:32,051 - werkzeug - ERROR - 127.0.0.1 - - [30/Mar/2025 13:23:32] code 400, message Bad request version ('75j¨¤V)º@_\x9a\x86\x13^Ù#«"ª)"ú\x10(8I¨\xadàaùØ\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+2025-03-30 13:23:32,051 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:32] "[31m[1m\x16\x03\x01\x07O\x01\x00\x07K\x03\x03Ýþ5>ü²Ó\x91\x86\x1f;ì\x8dK{J\x88w\x88\x7fùØ\x16\x18\x10\x11_\x053\x81\x98ß 75j¨¤V)º@_\x9a\x86\x13^Ù#«"ª)"ú\x10(8I¨­àaùØ\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À[0m" 400 -
+2025-03-30 13:23:32,053 - werkzeug - ERROR - 127.0.0.1 - - [30/Mar/2025 13:23:32] code 400, message Bad request version ('±ìÂU]\x15zd\x90\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+2025-03-30 13:23:32,054 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:32] "[31m[1m\x16\x03\x01\x02~\x01\x00\x02z\x03\x03\x7fÎÌÿ\x89_\x14\x0b\x05´\x1a!áÜDKþï®x¶e$¦;Ö\x93\x08¸eê, Ù§srûZny~2LmN*n¹·¦TÌ\x82ç\x0b±ìÂU]\x15zd\x90\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À[0m" 400 -
+2025-03-30 13:23:51,334 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:51] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 13:23:52,881 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:52] "GET /login HTTP/1.1" 200 -
+2025-03-30 13:23:57,882 - healthcare_security - INFO - User 2 logged in without 2FA
+2025-03-30 13:23:57,883 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 13:23:57,899 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2025-03-30 13:23:57,909 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:57] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 13:23:58,028 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:23:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 13:24:33,377 - healthcare_security - INFO - User 2 logged out
+2025-03-30 13:24:33,378 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:24:33] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 13:24:33,390 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:24:33] "GET /login HTTP/1.1" 200 -
+2025-03-30 13:24:33,515 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:24:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 13:27:48,252 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 13:27:48,252 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 13:27:48,253 - werkzeug - INFO -  * Restarting with stat
+2025-03-30 13:27:48,775 - werkzeug - WARNING -  * Debugger is active!
+2025-03-30 13:27:48,777 - werkzeug - INFO -  * Debugger PIN: 730-758-859
+2025-03-30 13:27:53,856 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:27:53] "GET /init-db HTTP/1.1" 200 -
+2025-03-30 13:27:57,143 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:27:57] "GET /login HTTP/1.1" 200 -
+2025-03-30 13:28:02,067 - healthcare_security - INFO - User 1 logged in without 2FA
+2025-03-30 13:28:02,068 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:28:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-30 13:28:02,087 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:28:02] "GET /dashboard HTTP/1.1" 200 -
+2025-03-30 13:28:02,208 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:28:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 13:28:05,099 - healthcare_security - INFO - User 1 logged out
+2025-03-30 13:28:05,099 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:28:05] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-03-30 13:28:05,113 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:28:05] "GET /login HTTP/1.1" 200 -
+2025-03-30 13:28:05,243 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2025 13:28:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-28 22:28:39,876 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-02-28 22:28:39,877 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-28 22:28:39,879 - werkzeug - INFO -  * Restarting with stat
+2026-02-28 22:28:41,293 - werkzeug - WARNING -  * Debugger is active!
+2026-02-28 22:28:41,298 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-02-28 22:28:56,432 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:28:56] "GET /init-db HTTP/1.1" 200 -
+2026-02-28 22:29:00,163 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:29:00] "GET /login HTTP/1.1" 200 -
+2026-02-28 22:29:06,193 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-02-28 22:29:06,195 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:29:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-28 22:29:06,482 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:29:06] "GET /dashboard HTTP/1.1" 200 -
+2026-02-28 22:29:13,454 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:29:13] "GET /profile HTTP/1.1" 200 -
+2026-02-28 22:30:55,827 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-02-28 22:30:55,828 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-28 22:30:55,829 - werkzeug - INFO -  * Restarting with stat
+2026-02-28 22:30:57,522 - werkzeug - WARNING -  * Debugger is active!
+2026-02-28 22:30:57,527 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-02-28 22:31:03,876 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:31:03] "GET / HTTP/1.1" 200 -
+2026-02-28 22:31:05,438 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:31:05] "GET /login HTTP/1.1" 200 -
+2026-02-28 22:31:11,712 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-02-28 22:31:11,714 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:31:11] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-28 22:31:12,164 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:31:12] "GET /dashboard HTTP/1.1" 200 -
+2026-02-28 22:31:18,412 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:31:18] "GET /profile HTTP/1.1" 200 -
+2026-02-28 22:31:29,867 - healthcare_security - INFO - User 1 logged out
+2026-02-28 22:31:29,870 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:31:29] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-28 22:31:29,920 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:31:29] "GET /login HTTP/1.1" 200 -
+2026-02-28 22:31:31,452 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:31:31] "GET /register HTTP/1.1" 200 -
+2026-02-28 22:31:52,828 - healthcare_security - INFO - New user registered: 4 - wabeau
+2026-02-28 22:31:52,830 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:31:52] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-02-28 22:31:52,954 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:31:52] "GET /setup-2fa HTTP/1.1" 200 -
+2026-02-28 22:32:23,782 - healthcare_security - INFO - User 4 completed 2FA setup
+2026-02-28 22:32:23,783 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:32:23] "[32mPOST /complete-2fa-setup HTTP/1.1[0m" 302 -
+2026-02-28 22:32:24,080 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:32:24] "GET /login HTTP/1.1" 200 -
+2026-02-28 22:32:31,970 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:32:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-28 22:32:32,020 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:32:32] "GET /verify-2fa HTTP/1.1" 200 -
+2026-02-28 22:32:36,218 - healthcare_security - INFO - User 4 completed 2FA authentication
+2026-02-28 22:32:36,220 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:32:36] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-02-28 22:32:36,405 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:32:36] "GET /dashboard HTTP/1.1" 200 -
+2026-02-28 22:32:40,186 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:32:40] "GET /create-patient-profile HTTP/1.1" 200 -
+2026-02-28 22:33:10,701 - healthcare_security - INFO - Action logged: CREATE on Patient with ID 2 by user 4
+2026-02-28 22:33:10,702 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:33:10] "[32mPOST /create-patient-profile HTTP/1.1[0m" 302 -
+2026-02-28 22:33:10,762 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 2 by user 4
+2026-02-28 22:33:10,765 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:33:10] "GET /dashboard HTTP/1.1" 200 -
+2026-02-28 22:33:18,347 - healthcare_security - INFO - User 4 logged out
+2026-02-28 22:33:18,348 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:33:18] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-28 22:33:18,395 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:33:18] "GET /login HTTP/1.1" 200 -

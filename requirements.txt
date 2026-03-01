@@ -1,0 +1,16 @@
+flask
+flask-sqlalchemy
+flask-login
+werkzeug
+pyotp
+qrcode
+pillow
+cryptography
+pyopenssl
+python-dotenv
+requests
+urllib3
+six
+pytest
+flake8
+black

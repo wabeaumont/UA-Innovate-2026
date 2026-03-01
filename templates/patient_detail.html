@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Details - Secure Healthcare{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Patient Details</li>
+            </ol>
+        </nav>
+        <h2>
+            <i class="fas fa-user me-2"></i>{{ patient.first_name }} {{ patient.last_name }}
+        </h2>
+        <p class="text-muted">Patient ID: {{ patient.id }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Personal Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label text-muted">Full Name</label>
+                    <p class="form-control-plaintext">{{ patient.first_name }} {{ patient.last_name }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Date of Birth</label>
+                    <p class="form-control-plaintext">{{ patient.dob }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Address</label>
+                    <p class="form-control-plaintext">{{ patient.address }}</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Phone</label>
+                    <p class="form-control-plaintext">{{ patient.phone }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Medical Records</h5>
+                <div>
+                    <a href="{{ url_for('add_medical_record', patient_id=patient.id) }}" class="btn btn-sm btn-primary">
+                        <i class="fas fa-plus me-1"></i>Add Record
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                {% if medical_records %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Diagnosis</th>
+                                <th>Medication</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for record in medical_records %}
+                            <tr>
+                                <td>{{ record.created_at.strftime('%Y-%m-%d') }}</td>
+                                <td>{{ record.record_type }}</td>
+                                <td>
+                                    {% if record.diagnosis %}
+                                    {{ record.diagnosis[:30] }}{% if record.diagnosis|length > 30 %}...{% endif %}
+                                    {% else %}
+                                    <span class="text-muted">-</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if record.medication %}
+                                    {{ record.medication[:30] }}{% if record.medication|length > 30 %}...{% endif %}
+                                    {% else %}
+                                    <span class="text-muted">-</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" 
+                                            data-bs-target="#recordModal{{ record.id }}">
+                                        <i class="fas fa-eye me-1"></i>View
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Modal for each record -->
+                            <div class="modal fade" id="recordModal{{ record.id }}" tabindex="-1" 
+                                 aria-labelledby="recordModalLabel{{ record.id }}" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="recordModalLabel{{ record.id }}">
+                                                {{ record.record_type }} - {{ record.created_at.strftime('%Y-%m-%d') }}
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label class="form-label text-muted">Date</label>
+                                                <p>{{ record.created_at.strftime('%Y-%m-%d %H:%M') }}</p>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label text-muted">Diagnosis</label>
+                                                <p>{{ record.diagnosis }}</p>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label text-muted">Treatment</label>
+                                                <p>{{ record.treatment }}</p>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label text-muted">Medication</label>
+                                                <p>{{ record.medication }}</p>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label text-muted">Notes</label>
+                                                <p>{{ record.notes }}</p>
+                                            </div>
+                                            <div class="mb-0">
+                                                <label class="form-label text-muted">Doctor</label>
+                                                <p>Dr. {{ record.doctor.user_first_name }} {{ record.doctor.user_last_name }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-info mb-0">
+                    <i class="fas fa-info-circle me-2"></i> No medical records found for this patient.
+                    <a href="{{ url_for('add_medical_record', patient_id=patient.id) }}" class="alert-link">Add a new record</a>.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary">
+            <i class="fas fa-arrow-left me-1"></i> Back to Dashboard
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - Secure Healthcare{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <i class="fas fa-lock fa-3x text-primary mb-3"></i>
+                    <h3>Login to Your Account</h3>
+                    <p class="text-muted">Enter your credentials to access the system</p>
+                </div>
+                
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+                
+                <div class="mt-4 text-center">
+                    <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5>System Security</h5>
+                <p class="mb-0 text-muted">This system uses AES-256 encryption and two-factor authentication to protect sensitive healthcare information in compliance with HIPAA regulations.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

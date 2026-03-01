@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Patient Profile - Secure Healthcare{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h2><i class="fas fa-user-plus me-2"></i>Create Patient Profile</h2>
+        <p class="text-muted">Complete your patient information for healthcare access</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Patient Information</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('create_patient_profile') }}">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" name="dob" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" 
+                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
+                        <div class="form-text">Enter phone number in format: 123-456-7890</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="patient_doctor" class="form-label">Doctor</label>
+                        <input type="text" class="form-control" id="patient_doctor" name="patient_doctor" required>
+                    </div>
+                    
+                    <div class="alert alert-info mb-4">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-info-circle fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="alert-heading">Data Protection Notice</h5>
+                                <p class="mb-0">All patient information is encrypted with AES-256 encryption and stored in compliance with HIPAA regulations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-1"></i> Create Profile
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Format phone number as user types
+    document.addEventListener('DOMContentLoaded', function() {
+        const phoneInput = document.getElementById('phone');
+        
+        phoneInput.addEventListener('input', function(e) {
+            var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : x[1] + '-' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+    });
+</script>
+{% endblock %}

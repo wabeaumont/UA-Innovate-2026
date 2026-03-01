@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctor Dashboard - Secure Healthcare{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2><i class="fas fa-user-md me-2"></i>Doctor Dashboard</h2>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt me-1"></i> Logout
+            </a>
+        </div>
+        <p class="text-muted">Welcome, Dr. {{ current_user.user_first_name }} {{ current_user.user_last_name }}. Manage your patients and records here.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Patient Directory</h5>
+                <div class="d-flex align-items-center">
+                    <a href="{{ url_for('add_patient') }}" class="btn btn-primary">
+                        <i class="fas fa-user-plus me-1"></i> Add New Patient
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                {% if patients %}
+                <div class="table-responsive">
+                    <table class="table table-hover" id="patientsTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Date of Birth</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for patient in patients %}
+                            <tr>
+                                <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+                                <td>{{ patient.dob }}</td>
+                                <td>{{ patient.phone }}</td>
+                                <td>
+                                    <a href="{{ url_for('view_patient', patient_id=patient.id) }}" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-eye me-1"></i> View
+                                    </a>
+                                    <a href="{{ url_for('add_medical_record', patient_id=patient.id) }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-plus me-1"></i> Add Record
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-info mb-0">
+                    <i class="fas fa-info-circle me-2"></i> No patients found in the system.
+                    <a href="{{ url_for('add_patient') }}" class="alert-link">Add a new patient</a>.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
