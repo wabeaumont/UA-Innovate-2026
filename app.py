@@ -16,6 +16,8 @@ from cryptography.hazmat.backends import default_backend
 import secrets
 import warnings
 from sqlalchemy import exc as sa_exc
+import identifiers as id
+import info
 warnings.simplefilter("default")
 warnings.simplefilter("ignore", category=sa_exc.LegacyAPIWarning)
 
@@ -490,8 +492,14 @@ def dashboard():
             log_action('VIEW', 'MedicalRecord', patient.id, 'Viewed own medical records')
         else:
             medical_records = []
-        
-        return render_template('patient_dashboard.html', patient=patient, medical_records=medical_records)
+        # include SOC event descriptions for patient dashboard
+        desc1 = f"Security flags raised: {ev1_flagsCount}/4\nUrgency: IMMEDIATE"
+        desc2 = f"Security flags raised: {ev2_flagsCount}/4\nUrgency: Minimal"
+        return render_template('patient_dashboard.html',
+                               patient=patient,
+                               medical_records=medical_records,
+                               event1_description=desc1,
+                               event2_description=desc2)
     
     # Default dashboard
     return render_template('dashboard.html')
@@ -823,6 +831,45 @@ def forbidden(e):
 def internal_server_error(e):
     logger.error(f"Internal server error: {str(e)}")
     return render_template('error.html', error_code=500, error_message="Internal server error"), 500
+
+# construct paths to the Case 1 data directory relative to this file
+# --- Flag stuff for dashboard case banners
+#       - basically check if flags are raised by running the respective functions on
+#       - the respective logs. then count how many flags are raised
+base_dir = os.path.dirname(__file__)
+case1_dir = os.path.join(base_dir, 'test_data', 'Case 1')
+case2_dir = os.path.join(base_dir, 'test_data', 'Case 2')
+
+case1_authLogs = os.path.join(case1_dir, 'auth_logs.csv')
+case1_dnsLogs = os.path.join(case1_dir, 'dns_logs.csv')
+case1_firewallLogs = os.path.join(case1_dir, 'firewall_logs.csv')
+case1_malwareLogs = os.path.join(case1_dir, 'malware_alerts.csv')
+
+case2_authLogs = os.path.join(case2_dir, 'auth_logs 1.csv')
+case2_dnsLogs = os.path.join(case2_dir, 'dns_logs 1.csv')
+case2_firewallLogs = os.path.join(case2_dir, 'firewall_logs 1.csv')
+case2_malwareLogs = os.path.join(case2_dir, 'malware_alerts 1.csv')
+
+ev2_phishFlag = id.identifyPhishing(case2_dnsLogs)
+ev2_bruteForceFlag = id.identifyBruteForce(case2_authLogs)
+ev2_externalFlag = id.identifyFirewallExternal(case2_firewallLogs)
+ev2_malwareFlarg = id.identifyMalware(case1_malwareLogs)
+ev2_flags = [ev2_phishFlag, ev2_bruteForceFlag, ev2_externalFlag, ev2_malwareFlarg]
+ev1_flagsCount = 0
+ev2_flagsCount = 0
+for i in ev2_flags:
+    if i:
+        ev1_flagsCount += 1
+
+ev1_phishFlag = id.identifyPhishing(case1_dnsLogs)
+ev1_bruteForceFlag = id.identifyBruteForce(case1_authLogs)
+ev1_externalFlag = id.identifyFirewallExternal(case1_firewallLogs)
+ev1_malwareFlarg = id.identifyMalware(case1_malwareLogs)
+ev1_flags = [ev1_phishFlag, ev1_bruteForceFlag, ev1_externalFlag, ev1_malwareFlarg]
+ev1_flagsCount = 0
+for i in ev1_flags:
+    if i:
+        ev1_flagsCount += 1
 
 if __name__ == '__main__':
     with app.app_context():

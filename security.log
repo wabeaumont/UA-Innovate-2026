@@ -739,3 +739,607 @@
 2026-02-28 22:33:18,347 - healthcare_security - INFO - User 4 logged out
 2026-02-28 22:33:18,348 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:33:18] "[32mGET /logout HTTP/1.1[0m" 302 -
 2026-02-28 22:33:18,395 - werkzeug - INFO - 127.0.0.1 - - [28/Feb/2026 22:33:18] "GET /login HTTP/1.1" 200 -
+2026-03-01 06:35:21,711 - healthcare_security - WARNING - Failed login attempt for username: ok
+2026-03-01 06:35:26,447 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 06:35:26,516 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 06:35:26,521 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 06:35:26,522 - app - ERROR - Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 99, in decrypt_data
+    decrypted = aesgcm.decrypt(nonce, encrypted, None)
+cryptography.exceptions.InvalidTag
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 482, in dashboard
+    return render_template('doctor_dashboard.html', patients=patients)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/templates/doctor_dashboard.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/templates/base.html", line 126, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/templates/doctor_dashboard.html", line 44, in block 'content'
+    <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 169, in first_name
+    return decrypt_data(self.first_name_encrypted)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 104, in decrypt_data
+    raise ValueError("Failed to decrypt data. The encryption key may have changed.")
+ValueError: Failed to decrypt data. The encryption key may have changed.
+2026-03-01 06:35:26,523 - healthcare_security - ERROR - Internal server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-03-01 06:35:33,954 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 06:35:33,955 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 06:35:33,955 - app - ERROR - Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 99, in decrypt_data
+    decrypted = aesgcm.decrypt(nonce, encrypted, None)
+cryptography.exceptions.InvalidTag
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 482, in dashboard
+    return render_template('doctor_dashboard.html', patients=patients)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/templates/doctor_dashboard.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/templates/base.html", line 126, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/templates/doctor_dashboard.html", line 44, in block 'content'
+    <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 169, in first_name
+    return decrypt_data(self.first_name_encrypted)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 104, in decrypt_data
+    raise ValueError("Failed to decrypt data. The encryption key may have changed.")
+ValueError: Failed to decrypt data. The encryption key may have changed.
+2026-03-01 06:35:33,956 - healthcare_security - ERROR - Internal server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-03-01 06:35:36,436 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 06:35:36,441 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 06:35:36,442 - app - ERROR - Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 99, in decrypt_data
+    decrypted = aesgcm.decrypt(nonce, encrypted, None)
+cryptography.exceptions.InvalidTag
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 482, in dashboard
+    return render_template('doctor_dashboard.html', patients=patients)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/templates/doctor_dashboard.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/templates/base.html", line 126, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/templates/doctor_dashboard.html", line 44, in block 'content'
+    <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+  File "/home/ubuntu/my_envs_ua/ua/lib/python3.8/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 169, in first_name
+    return decrypt_data(self.first_name_encrypted)
+  File "/home/ubuntu/last_version_ua_26/UA-Innovate-2026/UA-Innovate-2026-main/app.py", line 104, in decrypt_data
+    raise ValueError("Failed to decrypt data. The encryption key may have changed.")
+ValueError: Failed to decrypt data. The encryption key may have changed.
+2026-03-01 06:35:36,443 - healthcare_security - ERROR - Internal server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-03-01 06:36:41,076 - healthcare_security - INFO - New user registered: 5 - FlabbyFleeb
+2026-03-01 06:37:30,281 - healthcare_security - WARNING - Failed 2FA setup verification for user 5
+2026-03-01 06:37:39,363 - healthcare_security - INFO - User 5 completed 2FA setup
+2026-03-01 06:37:55,315 - healthcare_security - INFO - User 5 completed 2FA authentication
+2026-03-01 06:38:47,566 - healthcare_security - INFO - Action logged: CREATE on Patient with ID 3 by user 5
+2026-03-01 06:38:47,667 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 3 by user 5
+2026-03-01 06:41:05,541 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 3 by user 5
+2026-03-01 07:46:24,681 - healthcare_security - WARNING - Failed login attempt for username: ok
+2026-03-01 07:47:51,023 - healthcare_security - INFO - New user registered: 6 - BobbyHill
+2026-03-01 07:50:59,965 - healthcare_security - INFO - User 6 completed 2FA setup
+2026-03-01 07:51:12,426 - healthcare_security - INFO - User 6 completed 2FA authentication
+2026-03-01 08:00:33,304 - healthcare_security - INFO - New user registered: 7 - JobsLate
+2026-03-01 08:01:37,108 - healthcare_security - INFO - User 7 completed 2FA setup
+2026-03-01 08:01:53,017 - healthcare_security - INFO - User 7 completed 2FA authentication
+2026-03-01 08:09:38,294 - healthcare_security - INFO - User 7 logged out
+2026-03-01 08:10:24,669 - healthcare_security - INFO - User 7 completed 2FA authentication
+2026-03-01 08:45:49,310 - healthcare_security - INFO - User 7 completed 2FA authentication
+2026-03-01 08:57:31,934 - healthcare_security - INFO - User 7 logged out
+2026-03-01 09:01:43,084 - healthcare_security - INFO - User 7 completed 2FA authentication
+2026-03-01 09:02:04,494 - healthcare_security - INFO - User 7 logged out
+2026-03-01 03:28:16,499 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:28:16,596 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:28:16,596 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:28:16,598 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:28:17,474 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:28:17,519 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:28:17,526 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:28:28,918 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:28:28] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 03:28:29,004 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:28:29] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 03:28:30,867 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:28:30] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 03:28:31,876 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:28:31] "GET /login HTTP/1.1" 200 -
+2026-03-01 03:28:44,922 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 03:28:44,924 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:28:44] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 03:28:44,961 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:28:44,980 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:28:45,025 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:28:45] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:28:45,363 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:28:45] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:28:45,364 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:28:45] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:28:45,392 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:28:45] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=dZFbp8HhITcYfk74YH0Q HTTP/1.1" 200 -
+2026-03-01 03:28:45,413 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:28:45] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-01 03:31:38,485 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:31:38] "GET / HTTP/1.1" 200 -
+2026-03-01 03:31:47,633 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:31:47] "GET / HTTP/1.1" 200 -
+2026-03-01 03:31:50,821 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:31:50] "[32mGET /login HTTP/1.1[0m" 302 -
+2026-03-01 03:31:50,860 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:31:50,866 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:31:50,904 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:31:50] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:31:51,039 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:31:51] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:31:51,083 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:31:51] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:31:51,194 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:31:51] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=dZFbp8HhITcYfk74YH0Q HTTP/1.1[0m" 304 -
+2026-03-01 03:32:11,111 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:32:11,205 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:32:11,206 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:32:11,211 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:32:12,279 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:32:12,337 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:32:12,344 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:32:26,938 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:32:27,030 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:32:27,030 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:32:27,032 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:32:28,294 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:32:28,359 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:32:28,366 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:32:34,629 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:32:34] "GET / HTTP/1.1" 200 -
+2026-03-01 03:32:36,586 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:32:36] "GET /login HTTP/1.1" 200 -
+2026-03-01 03:32:54,026 - healthcare_security - WARNING - Failed login attempt for username: BobbyHill
+2026-03-01 03:32:54,029 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:32:54] "POST /login HTTP/1.1" 200 -
+2026-03-01 03:33:00,177 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 03:33:00,179 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 03:33:00,226 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:33:00,242 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:33:00,283 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:00] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:33:00,590 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:00] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:33:00,591 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:00] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:33:00,621 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:00] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=J7olGcXAoI0voE5cz8oE HTTP/1.1" 200 -
+2026-03-01 03:33:04,459 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:04] "[32mGET /login HTTP/1.1[0m" 302 -
+2026-03-01 03:33:07,237 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:07] "[32mGET /register HTTP/1.1[0m" 302 -
+2026-03-01 03:33:07,279 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:33:07,283 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:33:07,320 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:07] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:33:07,612 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:07] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:33:07,657 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:07] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:33:07,715 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:33:07] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=J7olGcXAoI0voE5cz8oE HTTP/1.1[0m" 304 -
+2026-03-01 03:35:04,140 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:35:04,229 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:35:04,230 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:35:04,233 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:35:05,331 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:35:05,392 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:35:05,401 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:37:01,119 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:37:01,236 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:37:01,237 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:37:01,239 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:37:02,355 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:37:02,421 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:37:02,429 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:37:10,281 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:37:10] "GET / HTTP/1.1" 200 -
+2026-03-01 03:37:12,053 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:37:12] "GET /login HTTP/1.1" 200 -
+2026-03-01 03:37:17,495 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 03:37:17,497 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:37:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 03:37:17,538 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:37:17,554 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:37:17,593 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:37:17] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:37:17,967 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:37:17] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:37:17,969 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:37:17] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:37:18,078 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:37:18] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8nSnV5z8BaLrdCH0KNyM HTTP/1.1" 200 -
+2026-03-01 03:38:10,108 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:38:10,172 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:38:10,172 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:38:10,174 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:38:11,067 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:38:11,120 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:38:11,126 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:38:25,634 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:38:25,727 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:38:25,728 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:38:25,731 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:38:26,920 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:38:27,001 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:38:27,010 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:38:31,659 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:31] "GET /init-db HTTP/1.1" 200 -
+2026-03-01 03:38:36,222 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:36] "GET /login HTTP/1.1" 200 -
+2026-03-01 03:38:41,981 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 03:38:41,983 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:41] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 03:38:42,020 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:38:42,037 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:38:42,077 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:42] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:38:42,372 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:42] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:38:42,376 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:42] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:38:42,448 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:42] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=MvqfnZk6bhlYMbRWTKMa HTTP/1.1" 200 -
+2026-03-01 03:38:44,357 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:44] "[32mGET /register HTTP/1.1[0m" 302 -
+2026-03-01 03:38:44,392 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:38:44,395 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:38:44,430 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:44] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:38:44,729 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:44] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:38:44,769 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:44] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:38:44,838 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:44] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=MvqfnZk6bhlYMbRWTKMa HTTP/1.1[0m" 304 -
+2026-03-01 03:38:49,016 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:49] "GET / HTTP/1.1" 200 -
+2026-03-01 03:38:54,281 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:54] "[32mGET /register HTTP/1.1[0m" 302 -
+2026-03-01 03:38:54,314 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:38:54,319 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:38:54,355 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:54] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:38:54,686 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:54] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:38:54,777 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:54] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:38:54,850 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:38:54] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=MvqfnZk6bhlYMbRWTKMa HTTP/1.1[0m" 304 -
+2026-03-01 03:46:08,000 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:46:08,085 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:46:08,085 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:46:08,088 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:46:09,228 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:46:09,293 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:46:09,302 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:46:15,446 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:46:15] "GET / HTTP/1.1" 200 -
+2026-03-01 03:46:17,096 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:46:17] "GET /login HTTP/1.1" 200 -
+2026-03-01 03:46:21,910 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 03:46:21,913 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:46:21] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 03:46:21,948 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:46:21,966 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:46:22,008 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:46:22] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:46:22,324 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:46:22] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:46:22,331 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:46:22] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:46:22,407 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:46:22] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=hDLksaR1hWYt1OnNBLh0 HTTP/1.1" 200 -
+2026-03-01 03:49:45,423 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:49:45,498 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:49:45,499 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:49:45,502 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:49:46,395 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:49:46,450 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:49:46,456 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:49:47,063 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:49:47] "GET / HTTP/1.1" 200 -
+2026-03-01 03:49:50,612 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:49:50] "GET /login HTTP/1.1" 200 -
+2026-03-01 03:49:55,437 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 03:49:55,439 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:49:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 03:49:55,476 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:49:55,491 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:49:55,533 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:49:55] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:49:55,782 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:49:55] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:49:55,785 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:49:55] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:49:55,851 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:49:55] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=bMALdOPv4JKNqwWBgxaX HTTP/1.1" 200 -
+2026-03-01 03:51:53,686 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:51:53,769 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:51:53,770 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:51:53,772 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:51:55,001 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:51:55,061 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:51:55,067 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:51:58,224 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:51:58] "GET / HTTP/1.1" 200 -
+2026-03-01 03:51:59,996 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:51:59] "GET /login HTTP/1.1" 200 -
+2026-03-01 03:52:05,805 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 03:52:05,808 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:52:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 03:52:05,848 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 03:52:05,865 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 03:52:05,910 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:52:05] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 03:52:06,273 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:52:06] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 03:52:06,276 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:52:06] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 03:52:06,344 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:52:06] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=8f7kD3hORSrazYoMeXKG HTTP/1.1" 200 -
+2026-03-01 03:58:01,695 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:58:01,761 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:58:01,762 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:58:01,763 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:58:02,601 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:58:02,648 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:58:02,654 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:58:28,213 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:58:28,297 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 03:58:28,298 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 03:58:28,301 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 03:58:29,444 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 03:58:29,512 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 03:58:29,519 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 03:58:33,364 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:58:33] "GET / HTTP/1.1" 200 -
+2026-03-01 03:58:34,577 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:58:34] "GET /login HTTP/1.1" 200 -
+2026-03-01 03:58:38,829 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 03:58:38,831 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:58:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 03:58:38,867 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:58:38] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 03:58:53,814 - healthcare_security - INFO - User 1 logged out
+2026-03-01 03:58:53,818 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:58:53] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 03:58:53,834 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:58:53] "GET /login HTTP/1.1" 200 -
+2026-03-01 03:58:56,354 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:58:56] "GET /register HTTP/1.1" 200 -
+2026-03-01 03:59:09,753 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:59:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 03:59:09,771 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 03:59:09] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 04:00:37,100 - healthcare_security - INFO - User 6 completed 2FA authentication
+2026-03-01 04:00:37,104 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:00:37] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 04:00:37,156 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:00:37] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:11:08,556 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:11:08] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:11:10,061 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:11:10] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:11:29,903 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:11:29] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:11:43,040 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:11:43] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:16:53,483 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:16:53] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 04:16:53,726 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:16:53] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 04:16:53,728 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:16:53] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 04:16:53,798 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:16:53] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=oOn0oJTxxP9jZQGk0D5i HTTP/1.1" 200 -
+2026-03-01 04:16:53,822 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:16:53] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-01 04:17:39,556 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:17:39] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 04:17:39,643 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:17:39] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 04:17:39,646 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:17:39] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 04:17:39,736 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:17:39] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=oOn0oJTxxP9jZQGk0D5i HTTP/1.1[0m" 304 -
+2026-03-01 04:17:39,750 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:17:39] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-01 04:19:48,632 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:19:48] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:19:56,535 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:19:56] "[33mGET /event/2 HTTP/1.1[0m" 404 -
+2026-03-01 04:24:44,544 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:24:44] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:25:11,682 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:25:11,917 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:25:13,637 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:25:13,740 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:25:13,754 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:25:18,852 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:25:19,064 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:25:20,389 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:33:33,887 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:35:13,468 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:37:27,791 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:37:27,902 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 04:37:27,902 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 04:37:27,905 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:37:29,478 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:37:29,630 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:37:29,639 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:37:34,296 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:37:34] "GET / HTTP/1.1" 200 -
+2026-03-01 04:37:35,830 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:37:35] "GET /login HTTP/1.1" 200 -
+2026-03-01 04:37:44,197 - healthcare_security - WARNING - Failed login attempt for username: BobbyHill
+2026-03-01 04:37:44,200 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:37:44] "POST /login HTTP/1.1" 200 -
+2026-03-01 04:37:51,888 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:37:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 04:37:51,909 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:37:51] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 04:38:05,640 - healthcare_security - INFO - User 6 completed 2FA authentication
+2026-03-01 04:38:05,643 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:38:05] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 04:38:05,677 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:38:05] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:39:05,622 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:39:05,965 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:39:07,779 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:39:07,903 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:39:07,913 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:39:23,108 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:39:23,463 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:41:37,375 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:41:37,835 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 04:41:37,836 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 04:41:37,838 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:41:39,417 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:41:39,863 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:41:39,870 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:41:41,396 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:41:41] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 04:41:41,458 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:41:41] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 04:41:49,489 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:41:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 04:41:49,506 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:41:49] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 04:41:55,389 - healthcare_security - INFO - User 6 completed 2FA authentication
+2026-03-01 04:41:55,392 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:41:55] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 04:41:55,423 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:41:55] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 04:41:55,840 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:41:55] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 04:41:55,886 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:41:55] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 04:41:55,966 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:41:55] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=sZkMZ6YejzA5cZceLbN0 HTTP/1.1" 200 -
+2026-03-01 04:41:55,980 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:41:55] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-01 04:42:19,266 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:42:19,591 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:42:21,496 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:42:21,862 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:42:21,867 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:42:22,599 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:42:22] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 04:42:22,689 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:42:22] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 04:42:29,479 - healthcare_security - WARNING - Failed login attempt for username: BobbyHill
+2026-03-01 04:42:29,482 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:42:29] "POST /login HTTP/1.1" 200 -
+2026-03-01 04:42:35,964 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:42:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 04:42:35,982 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:42:35] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 04:42:40,495 - healthcare_security - INFO - User 6 completed 2FA authentication
+2026-03-01 04:42:40,497 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:42:40] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 04:42:40,539 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:42:40] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:45:46,835 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:45:47,136 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:45:49,150 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:45:49,779 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:45:49,796 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:45:50,850 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:45:51,106 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:45:52,357 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:45:52,758 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:45:52,765 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:46:03,884 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:46:04,196 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:46:06,074 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:46:06,563 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:46:06,569 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:46:10,634 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:46:11,011 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:46:12,378 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:46:12,760 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:46:12,766 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:46:13,795 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:46:13,989 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:46:15,291 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:46:15,671 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:46:15,678 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:46:16,716 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:46:17,223 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:46:18,744 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:46:19,150 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:46:19,155 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:46:22,195 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ethan\\OneDrive\\UAB\\Competitions\\UA-Innovate-2026-main\\app.py', reloading
+2026-03-01 04:46:22,471 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:46:23,949 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:46:24,404 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:46:24,411 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 04:46:24,912 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:46:24] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 04:46:24,951 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:46:24] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 04:46:31,442 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:46:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 04:46:31,459 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:46:31] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 04:46:46,406 - healthcare_security - INFO - User 6 completed 2FA authentication
+2026-03-01 04:46:46,408 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:46:46] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 04:46:46,439 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:46:46] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:49:15,937 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:49:15] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:49:18,450 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:49:18] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:49:23,735 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:49:23] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:49:28,961 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:49:28] "[33mGET /event/1 HTTP/1.1[0m" 404 -
+2026-03-01 04:51:11,057 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:51:11] "[33mGET /event/1 HTTP/1.1[0m" 404 -
+2026-03-01 04:54:47,316 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:54:47] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 04:57:53,535 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:57:53] "[33mGET /event/1 HTTP/1.1[0m" 404 -
+2026-03-01 04:58:10,192 - healthcare_security - INFO - User 6 logged out
+2026-03-01 04:58:10,196 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:10] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 04:58:10,217 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:10] "GET /login HTTP/1.1" 200 -
+2026-03-01 04:58:15,737 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 04:58:15,740 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 04:58:15,788 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 04:58:15,816 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 04:58:15,859 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:15] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 04:58:16,211 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:16] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 04:58:16,213 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:16] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 04:58:16,239 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:16] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=irWSNhmOnYuCvrDBWN5T HTTP/1.1" 200 -
+2026-03-01 04:58:16,255 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:16] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-01 04:58:41,561 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:41] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 04:58:41,604 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 04:58:41,609 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 04:58:41,648 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:41] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 04:58:41,781 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:41] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 04:58:41,846 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:41] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 04:58:41,953 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:41] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=irWSNhmOnYuCvrDBWN5T HTTP/1.1[0m" 304 -
+2026-03-01 04:58:48,233 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:48] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 04:58:48,261 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 04:58:48,266 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 04:58:48,298 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:48] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 04:58:48,603 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:48] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 04:58:48,655 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:48] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 04:58:48,714 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 04:58:48] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=irWSNhmOnYuCvrDBWN5T HTTP/1.1[0m" 304 -
+2026-03-01 04:59:51,737 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:59:52,157 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 04:59:52,157 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 04:59:52,158 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 04:59:53,379 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 04:59:53,761 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 04:59:53,767 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 05:00:47,849 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 05:00:48,446 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 05:00:48,446 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 05:00:48,448 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 05:00:50,277 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 05:00:50,856 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 05:00:50,862 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 05:02:12,780 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 05:02:13,250 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 05:02:13,251 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 05:02:13,253 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 05:02:14,716 - healthcare_security - WARNING - Generating new encryption key - all previous encrypted data will be lost!
+2026-03-01 05:02:15,135 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 05:02:15,140 - werkzeug - INFO -  * Debugger PIN: 743-718-117
+2026-03-01 05:02:20,504 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:02:20] "GET /login HTTP/1.1" 200 -
+2026-03-01 05:02:25,003 - healthcare_security - WARNING - Failed login attempt for username: admin
+2026-03-01 05:02:25,008 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:02:25] "POST /login HTTP/1.1" 200 -
+2026-03-01 05:02:30,017 - healthcare_security - WARNING - Failed login attempt for username: admin
+2026-03-01 05:02:30,021 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:02:30] "POST /login HTTP/1.1" 200 -
+2026-03-01 05:02:34,766 - healthcare_security - WARNING - Failed login attempt for username: doctor
+2026-03-01 05:02:34,770 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:02:34] "POST /login HTTP/1.1" 200 -
+2026-03-01 05:03:09,421 - healthcare_security - WARNING - Failed login attempt for username: doctor
+2026-03-01 05:03:09,424 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:03:09] "POST /login HTTP/1.1" 200 -
+2026-03-01 05:03:19,559 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:03:19] "GET / HTTP/1.1" 200 -
+2026-03-01 05:03:22,042 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:03:22] "GET /init-db HTTP/1.1" 200 -
+2026-03-01 05:03:24,681 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:03:24] "GET /login HTTP/1.1" 200 -
+2026-03-01 05:03:31,289 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 05:03:31,291 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:03:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 05:03:31,326 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 05:03:31,344 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:03:31] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 05:03:44,152 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:03:44] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 05:03:44,186 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 05:03:44,190 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:03:44] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 05:03:56,952 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:03:56] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 05:03:56,986 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 05:03:56,990 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:03:56] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 05:04:03,756 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:04:03] "GET / HTTP/1.1" 200 -
+2026-03-01 05:04:05,893 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:04:05] "[32mGET /login HTTP/1.1[0m" 302 -
+2026-03-01 05:04:05,939 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 05:04:05,948 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:04:05] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 05:04:08,255 - healthcare_security - INFO - User 2 logged out
+2026-03-01 05:04:08,259 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:04:08] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 05:04:08,275 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:04:08] "GET /login HTTP/1.1" 200 -
+2026-03-01 05:04:22,509 - healthcare_security - WARNING - Failed login attempt for username: BobbyHill
+2026-03-01 05:04:22,514 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:04:22] "POST /login HTTP/1.1" 200 -
+2026-03-01 05:04:30,583 - healthcare_security - WARNING - Failed login attempt for username: BobbyHill
+2026-03-01 05:04:30,587 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:04:30] "POST /login HTTP/1.1" 200 -
+2026-03-01 05:04:32,242 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:04:32] "GET /register HTTP/1.1" 200 -
+2026-03-01 05:05:07,002 - healthcare_security - INFO - New user registered: 4 - test
+2026-03-01 05:05:07,005 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:07] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-03-01 05:05:08,363 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:08] "GET /setup-2fa HTTP/1.1" 200 -
+2026-03-01 05:05:27,129 - healthcare_security - INFO - User 4 completed 2FA setup
+2026-03-01 05:05:27,132 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:27] "[32mPOST /complete-2fa-setup HTTP/1.1[0m" 302 -
+2026-03-01 05:05:27,151 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:27] "GET /login HTTP/1.1" 200 -
+2026-03-01 05:05:36,018 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 05:05:36,038 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:36] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 05:05:39,060 - healthcare_security - WARNING - Failed 2FA attempt for user ID: 4
+2026-03-01 05:05:39,065 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:39] "POST /verify-2fa HTTP/1.1" 200 -
+2026-03-01 05:05:45,019 - healthcare_security - INFO - User 4 completed 2FA authentication
+2026-03-01 05:05:45,023 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:45] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 05:05:45,054 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:45] "GET /dashboard HTTP/1.1" 200 -
