@@ -46,7 +46,7 @@ logger = logging.getLogger('healthcare_security')
 # App configuration
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', secrets.token_hex(32))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///healthcare.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blazersec.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)  # Shorter session for security
 
@@ -154,7 +154,7 @@ class User(db.Model, UserMixin):
         
         return pyotp.totp.TOTP(self.totp_secret).provisioning_uri(
             name=self.email,
-            issuer_name="Secure Healthcare"
+            issuer_name="BlazerSec"
         )
     
     def verify_totp(self, token):
@@ -164,7 +164,7 @@ class User(db.Model, UserMixin):
             
         totp = pyotp.TOTP(self.totp_secret)
         return totp.verify(token)
-
+    
 class Patient(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -518,83 +518,6 @@ def dashboard():
     # Default dashboard
     return render_template('dashboard.html')
 
-@app.route('/create-patient-profile', methods=['GET', 'POST'])
-@login_required
-@role_required(['patient'])
-def create_patient_profile():
-    """Allow patients to create their profile if they don't have one"""
-    # Check if patient already has a profile
-    existing_profile = Patient.query.filter_by(user_id=current_user.id).first()
-    if existing_profile:
-        flash('You already have a patient profile', 'info')
-        return redirect(url_for('dashboard'))
-    
-    if request.method == 'POST':
-        try:
-            patient = Patient(user_id=current_user.id)
-            patient.first_name = request.form.get('first_name')
-            patient.last_name = request.form.get('last_name')
-            patient.dob = request.form.get('dob')
-            patient.address = request.form.get('address')
-            patient.phone = request.form.get('phone')
-            patient.patient_doctor = request.form.get('patient_doctor')
-            
-            db.session.add(patient)
-            db.session.commit()
-            
-            log_action('CREATE', 'Patient', patient.id, 'Created own patient profile')
-            flash('Patient profile created successfully!', 'success')
-            return redirect(url_for('dashboard'))
-        except Exception as e:
-            db.session.rollback()
-            logger.error(f"Error creating patient profile: {str(e)}")
-            flash(f'Error creating patient profile', 'danger')
-    
-    return render_template('create_patient_profile.html')
-
-@app.route('/patient/<int:patient_id>')
-@login_required
-@role_required(['admin', 'doctor'])
-def view_patient(patient_id):
-    """View patient details and medical records"""
-    patient = Patient.query.get_or_404(patient_id)
-    medical_records = MedicalRecord.query.filter_by(patient_id=patient_id).all()
-    
-    log_action('VIEW', 'Patient', patient_id, f'Viewed patient details')
-    return render_template('patient_detail.html', patient=patient, medical_records=medical_records)
-
-@app.route('/patient/<int:patient_id>/add-record', methods=['GET', 'POST'])
-@login_required
-@role_required(['doctor'])
-def add_medical_record(patient_id):
-    """Add a medical record for a patient"""
-    patient = Patient.query.get_or_404(patient_id)
-    
-    if request.method == 'POST':
-        try:
-            record = MedicalRecord(
-                patient_id=patient_id,
-                doctor_id=current_user.id,
-                record_type=request.form.get('record_type')
-            )
-            record.diagnosis = request.form.get('diagnosis')
-            record.treatment = request.form.get('treatment')
-            record.medication = request.form.get('medication')
-            record.notes = request.form.get('notes')
-            
-            db.session.add(record)
-            db.session.commit()
-            
-            log_action('CREATE', 'MedicalRecord', record.id, f'Created medical record for patient {patient_id}')
-            flash('Medical record added successfully!', 'success')
-            return redirect(url_for('view_patient', patient_id=patient_id))
-        except Exception as e:
-            db.session.rollback()
-            logger.error(f"Error adding medical record: {str(e)}")
-            flash(f'Error adding medical record', 'danger')
-    
-    return render_template('add_medical_record.html', patient=patient)
-
 @app.route('/profile')
 @login_required
 def profile():
@@ -616,104 +539,6 @@ def logout():
         session.clear()
         flash('You have been logged out successfully.', 'success')
     return redirect(url_for('login'))
-
-@app.route('/add-patient', methods=['GET', 'POST'])
-@login_required
-@role_required(['admin', 'doctor'])
-def add_patient():
-    """Add a new patient to the system"""
-    if request.method == 'POST':
-        try:
-            # Create a new user account for the patient
-            username = request.form.get('username')
-            email = request.form.get('email')
-            user_first_name = request.form.get('first_name')
-            user_last_name = request.form.get('last_name') 
-            
-            # Check if username or email already exists
-            if User.query.filter_by(username=username).first():
-                flash('Username already exists', 'danger')
-                return render_template('add_patient.html')
-            
-            if User.query.filter_by(email=email).first():
-                flash('Email already exists', 'danger')
-                return render_template('add_patient.html')
-            
-            # Create patient user account
-            password = secrets.token_urlsafe(10)  # Generate a random secure password
-            patient_user = User(username=username, email=email, role='patient', user_first_name = user_first_name, user_last_name = user_last_name)
-            patient_user.set_password(password)
-            patient_user.generate_totp_secret()  # Generate 2FA secret
-            
-            db.session.add(patient_user)
-            db.session.commit()  # Commit to get user ID
-            
-            # Create patient profile
-            patient = Patient(user_id=patient_user.id)
-            patient.first_name = request.form.get('first_name')
-            patient.last_name = request.form.get('last_name')
-            patient.dob = request.form.get('dob')
-            patient.address = request.form.get('address')
-            patient.phone = request.form.get('phone')
-            patient.patient_doctor = request.form.get('patient_doctor')
-            
-            db.session.add(patient)
-            db.session.commit()
-            
-            log_action('CREATE', 'Patient', patient.id, f'Created new patient by {current_user.username}')
-            
-            flash(f'Patient added successfully! Temporary password: {password}', 'success')
-            return redirect(url_for('view_patient', patient_id=patient.id))
-        
-        except Exception as e:
-            db.session.rollback()
-            logger.error(f"Error adding patient: {str(e)}")
-            flash(f'Error adding patient: {str(e)}', 'danger')
-    
-    return render_template('add_patient.html')
-
-@app.route('/add-user', methods=['GET', 'POST'])
-@login_required
-@role_required(['admin', 'doctor'])
-def add_user():
-    """Add a new user to the system"""
-    if request.method == 'POST':
-        try:
-            # Create a new user account for the patient
-            username = request.form.get('username')
-            email = request.form.get('email')
-            user_first_name = request.form.get('first_name')
-            user_last_name = request.form.get('last_name') 
-            role = request.form.get('role')
-            
-            # Check if username or email already exists
-            if User.query.filter_by(username=username).first():
-                flash('Username already exists', 'danger')
-                return render_template('add_patient.html')
-            
-            if User.query.filter_by(email=email).first():
-                flash('Email already exists', 'danger')
-                return render_template('add_patient.html')
-            
-            # Create patient user account
-            password = secrets.token_urlsafe(10)  # Generate a random secure password
-            user = User(username=username, email=email, role= role, user_first_name = user_first_name, user_last_name = user_last_name)
-            user.set_password(password)
-            user.generate_totp_secret()  # Generate 2FA secret
-            
-            db.session.add(user)
-            db.session.commit()  # Commit to get user ID
-            
-            log_action('CREATE', role, user.id, f'Created new user by {current_user.username}')
-            
-            flash(f'User added successfully! Temporary password: {password}. Secret Key for 2FA: {user.totp_secret}', 'success', )
-        
-        except Exception as e:
-            db.session.rollback()
-            logger.error(f"Error adding user: {str(e)}")
-            flash(f'Error adding user: {str(e)}', 'danger')
-    
-    return render_template('add_user.html')
 
 @app.route('/change-password', methods=['GET', 'POST'])
 @login_required
@@ -767,17 +592,9 @@ def init_db():
         if not admin:
             admin = User(username='admin', email='admin@example.com', role='admin', user_first_name = 'Alan', user_last_name = 'Adminson')
             admin.set_password('admin123')
-            admin.totp_secret = None  # Disable 2FA for testing
+            admin.generate_totp_secret()
             db.session.add(admin)
-            
-        # Create doctor user if not exists
-        doctor = User.query.filter_by(username='doctor').first()
-        if not doctor:
-            doctor = User(username='doctor', email='doctor@example.com', role='doctor', user_first_name = 'Donald', user_last_name = 'Doctorson')
-            doctor.set_password('doctor123')
-            doctor.totp_secret = None  # Disable 2FA for testing
-            db.session.add(doctor)
-            
+        
         # Create patient user if not exists
         patient_user = User.query.filter_by(username='patient').first()
         if not patient_user:
@@ -785,47 +602,15 @@ def init_db():
             patient_user.set_password('patient123')
             patient_user.totp_secret = None  # Disable 2FA for testing
             db.session.add(patient_user)
-        
-        # Commit users first to ensure they have IDs
-        db.session.commit()
-        
-        # Add a patient record for the patient user if it doesn't exist
-        patient = Patient.query.filter_by(user_id=patient_user.id).first()
-        if not patient:
-            patient = Patient(user_id=patient_user.id)
-            patient.first_name = "Penny"
-            patient.last_name = "Patientson"
-            patient.dob = "1980-01-01"
-            patient.address = "123 Main St, Anytown, US"
-            patient.phone = "555-123-4567"
-            patient.patient_doctor = "Dr. Donald Doctorson"
-            db.session.add(patient)
-            
-            # Commit the patient to get an ID before creating the medical record
-            db.session.commit()
-            
-            # Now add a sample medical record with the valid patient ID
-            record = MedicalRecord(
-                patient_id=patient.id,
-                doctor_id=doctor.id,
-                record_type="Consultation"
-            )
-            record.diagnosis = "Seasonal allergies"
-            record.treatment = "Rest and hydration"
-            record.medication = "Loratadine 10mg daily"
-            record.notes = "Patient reported feeling better after initial treatment"
-            db.session.add(record)
-        
+
         # Final commit for any remaining changes
         db.session.commit()
         
-        return '''
+        return f'''
         <h1>Database initialized with test data</h1>
         <p>Created test accounts:</p>
         <ul>
-            <li><strong>Admin:</strong> username=admin, password=admin123</li>
-            <li><strong>Doctor:</strong> username=doctor, password=doctor123</li>
-            <li><strong>Patient:</strong> username=patient, password=patient123</li>
+            <li><strong>Admin:</strong> username=admin, password=admin123, totp_secret={admin.totp_secret}</li>
         </ul>
         <p><a href="/login">Go to login page</a></p>
         '''
@@ -833,14 +618,57 @@ def init_db():
         db.session.rollback()
         return f'Error initializing database: {str(e)}', 500
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html', error_code=404, error_message="Page not found"), 404
 
-@app.route('/case2', methods=['GET', 'POST'])
-@login_required
-@role_required(['admin'])
-def case2():
-    users = User.query.all()
-    return render_template('case2.html', users=users)
+@app.errorhandler(403)
+def forbidden(e):
+    return render_template('error.html', error_code=403, error_message="Access forbidden"), 403
 
+@app.errorhandler(500)
+def internal_server_error(e):
+    logger.error(f"Internal server error: {str(e)}")
+    return render_template('error.html', error_code=500, error_message="Internal server error"), 500
+
+# construct paths to the Case 1 data directory relative to this file
+# --- Flag stuff for dashboard case banners
+#       - basically check if flags are raised by running the respective functions on
+#       - the respective logs. then count how many flags are raised
+base_dir = os.path.dirname(__file__)
+case1_dir = os.path.join(base_dir, 'test_data', 'Case1')
+case2_dir = os.path.join(base_dir, 'test_data', 'Case2')
+
+case1_authLogs = os.path.join(case1_dir, 'auth_logs.csv')
+case1_dnsLogs = os.path.join(case1_dir, 'dns_logs.csv')
+case1_firewallLogs = os.path.join(case1_dir, 'firewall_logs.csv')
+case1_malwareLogs = os.path.join(case1_dir, 'malware_alerts.csv')
+
+case2_authLogs = os.path.join(case2_dir, 'auth_logs 1.csv')
+case2_dnsLogs = os.path.join(case2_dir, 'dns_logs 1.csv')
+case2_firewallLogs = os.path.join(case2_dir, 'firewall_logs 1.csv')
+case2_malwareLogs = os.path.join(case2_dir, 'malware_alerts 1.csv')
+
+ev2_phishFlag = id.identifyPhishing(case2_dnsLogs)
+ev2_bruteForceFlag = id.identifyBruteForce(case2_authLogs)
+ev2_externalFlag = id.identifyFirewallExternal(case2_firewallLogs)
+ev2_malwareFlarg = id.identifyMalware(case1_malwareLogs)
+ev2_flags = [ev2_phishFlag, ev2_bruteForceFlag, ev2_externalFlag, ev2_malwareFlarg]
+ev1_flagsCount = 0
+ev2_flagsCount = 0
+for i in ev2_flags:
+    if i:
+        ev1_flagsCount += 1
+
+ev1_phishFlag = id.identifyPhishing(case1_dnsLogs)
+ev1_bruteForceFlag = id.identifyBruteForce(case1_authLogs)
+ev1_externalFlag = id.identifyFirewallExternal(case1_firewallLogs)
+ev1_malwareFlarg = id.identifyMalware(case1_malwareLogs)
+ev1_flags = [ev1_phishFlag, ev1_bruteForceFlag, ev1_externalFlag, ev1_malwareFlarg]
+ev1_flagsCount = 0
+for i in ev1_flags:
+    if i:
+        ev1_flagsCount += 1
 
 # export endpoint for case1 report (renders the Case1 HTML to PDF)
 @app.route('/case1/export', methods=['POST'])
@@ -934,58 +762,6 @@ def export_case1():
 
     return send_file(buf, mimetype='application/pdf', as_attachment=True, download_name='case1_report.pdf')
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('error.html', error_code=404, error_message="Page not found"), 404
-
-@app.errorhandler(403)
-def forbidden(e):
-    return render_template('error.html', error_code=403, error_message="Access forbidden"), 403
-
-@app.errorhandler(500)
-def internal_server_error(e):
-    logger.error(f"Internal server error: {str(e)}")
-    return render_template('error.html', error_code=500, error_message="Internal server error"), 500
-
-# construct paths to the Case 1 data directory relative to this file
-# --- Flag stuff for dashboard case banners
-#       - basically check if flags are raised by running the respective functions on
-#       - the respective logs. then count how many flags are raised
-base_dir = os.path.dirname(__file__)
-case1_dir = os.path.join(base_dir, 'test_data', 'Case1')
-case2_dir = os.path.join(base_dir, 'test_data', 'Case2')
-
-case1_authLogs = os.path.join(case1_dir, 'auth_logs.csv')
-case1_dnsLogs = os.path.join(case1_dir, 'dns_logs.csv')
-case1_firewallLogs = os.path.join(case1_dir, 'firewall_logs.csv')
-case1_malwareLogs = os.path.join(case1_dir, 'malware_alerts.csv')
-
-case2_authLogs = os.path.join(case2_dir, 'auth_logs 1.csv')
-case2_dnsLogs = os.path.join(case2_dir, 'dns_logs 1.csv')
-case2_firewallLogs = os.path.join(case2_dir, 'firewall_logs 1.csv')
-case2_malwareLogs = os.path.join(case2_dir, 'malware_alerts 1.csv')
-
-ev2_phishFlag = id.identifyPhishing(case2_dnsLogs)
-ev2_bruteForceFlag = id.identifyBruteForce(case2_authLogs)
-ev2_externalFlag = id.identifyFirewallExternal(case2_firewallLogs)
-ev2_malwareFlarg = id.identifyMalware(case1_malwareLogs)
-ev2_flags = [ev2_phishFlag, ev2_bruteForceFlag, ev2_externalFlag, ev2_malwareFlarg]
-ev1_flagsCount = 0
-ev2_flagsCount = 0
-for i in ev2_flags:
-    if i:
-        ev1_flagsCount += 1
-
-ev1_phishFlag = id.identifyPhishing(case1_dnsLogs)
-ev1_bruteForceFlag = id.identifyBruteForce(case1_authLogs)
-ev1_externalFlag = id.identifyFirewallExternal(case1_firewallLogs)
-ev1_malwareFlarg = id.identifyMalware(case1_malwareLogs)
-ev1_flags = [ev1_phishFlag, ev1_bruteForceFlag, ev1_externalFlag, ev1_malwareFlarg]
-ev1_flagsCount = 0
-for i in ev1_flags:
-    if i:
-        ev1_flagsCount += 1
-
 @app.route('/case1', methods=['GET', 'POST'])
 @login_required
 @role_required(['admin'])
@@ -1035,6 +811,148 @@ def case1():
     summary_text = "\n".join(lines)
 
     return render_template('case1.html', users=users, summary_text=summary_text)
+
+# export endpoint for case1 report (renders the case2 HTML to PDF)
+@app.route('/case2/export', methods=['POST'])
+@login_required
+@role_required(['admin'])
+def export_case2():
+    # If WeasyPrint isn't available, fallback to CSV download
+    if HTML is None:
+        # reproduce CSV fallback
+        base_dir = os.path.dirname(__file__)
+        case2_dir = os.path.join(base_dir, 'test_data', 'case2')
+        case2_authLogs = os.path.join(case2_dir, 'auth_logs.csv')
+        case2_dnsLogs = os.path.join(case2_dir, 'dns_logs.csv')
+        case2_firewallLogs = os.path.join(case2_dir, 'firewall_logs.csv')
+        case2_malwareLogs = os.path.join(case2_dir, 'malware_alerts.csv')
+
+        ev1_phishFlag = id.identifyPhishing(case2_dnsLogs)
+        ev1_bruteForceFlag = id.identifyBruteForce(case2_authLogs)
+        ev1_externalFlag = id.identifyFirewallExternal(case2_firewallLogs)
+        ev1_malwareFlag = id.identifyMalware(case2_malwareLogs)
+
+        ev1_phishInfo = info.getPhishingInfo(case2_dnsLogs)
+        ev1_bruteForceInfo = info.getBruteForceInfo(case2_authLogs)
+        ev1_externalIPInfo = info.getFirewallExternalInfo(case2_firewallLogs)
+        ev1_malwareInfo = info.getMalwareInfo(case2_malwareLogs)
+
+        csv_content = "flag,details\n"
+        if ev1_phishFlag:
+            csv_content += f"phishing,{ev1_phishInfo}\n"
+        if ev1_bruteForceFlag:
+            csv_content += f"bruteforce,{ev1_bruteForceInfo}\n"
+        if ev1_externalFlag:
+            csv_content += f"firewall,{ev1_externalIPInfo}\n"
+        if ev1_malwareFlag:
+            csv_content += f"malware,{ev1_malwareInfo}\n"
+
+        response = make_response(csv_content)
+        response.headers['Content-Type'] = 'text/csv'
+        response.headers['Content-Disposition'] = 'attachment; filename=case2_report.csv'
+        return response
+
+    # Build the same view data and render HTML without the EXPORT button
+    users = User.query.all()
+    base_dir = os.path.dirname(__file__)
+    case2_dir = os.path.join(base_dir, 'test_data', 'case2')
+    case2_authLogs = os.path.join(case2_dir, 'auth_logs.csv')
+    case2_dnsLogs = os.path.join(case2_dir, 'dns_logs.csv')
+    case2_firewallLogs = os.path.join(case2_dir, 'firewall_logs.csv')
+    case2_malwareLogs = os.path.join(case2_dir, 'malware_alerts.csv')
+
+    ev1_phishFlag = id.identifyPhishing(case2_dnsLogs)
+    ev1_bruteForceFlag = id.identifyBruteForce(case2_authLogs)
+    ev1_externalFlag = id.identifyFirewallExternal(case2_firewallLogs)
+    ev1_malwareFlag = id.identifyMalware(case2_malwareLogs)
+
+    ev1_phishInfo = info.getPhishingInfo(case2_dnsLogs)
+    ev1_bruteForceInfo = info.getBruteForceInfo(case2_authLogs)
+    ev1_externalIPInfo = info.getFirewallExternalInfo(case2_firewallLogs)
+    ev1_malwareInfo = info.getMalwareInfo(case2_malwareLogs)
+
+    # build the same summary text as the case2 view
+    ev1_flags = [ev1_phishFlag, ev1_bruteForceFlag, ev1_externalFlag, ev1_malwareFlag]
+    ev1_flagsCount = sum(1 for i in ev1_flags if i)
+    lines = []
+    lines.append(f"{ev1_flagsCount} flag(s) were raised")
+    if ev1_flagsCount:
+        lines.append("Flags raised:")
+        if ev1_phishFlag:
+            lines.append("  Phishing")
+            lines.append(f"    DNS Log Snippet: {ev1_phishInfo}")
+        if ev1_bruteForceFlag:
+            lines.append("  Brute force")
+            lines.append(f"    Auth Log Snippet: {ev1_bruteForceInfo}")
+        if ev1_externalFlag:
+            lines.append("  Firewall")
+            lines.append(f"    Firewall Log Snippet: {ev1_externalIPInfo}")
+        if ev1_malwareFlag:
+            lines.append("  Malware")
+            lines.append(f"    Malware Log Snippet: {ev1_malwareInfo}")
+    summary_text = "\n".join(lines)
+
+    # Render template with for_pdf=True so it hides the EXPORT button
+    html = render_template('case2.html', users=users, summary_text=summary_text, for_pdf=True)
+
+    # Convert rendered HTML to PDF
+    pdf_bytes = HTML(string=html, base_url=request.url_root).write_pdf()
+
+    buf = BytesIO()
+    buf.write(pdf_bytes)
+    buf.seek(0)
+
+    return send_file(buf, mimetype='application/pdf', as_attachment=True, download_name='case2_report.pdf')
+
+@app.route('/case2', methods=['GET', 'POST'])
+@login_required
+@role_required(['admin'])
+def case2():
+    users = User.query.all()
+
+    # compute summary based on dataset flags (example logic)
+    base_dir = os.path.dirname(__file__)
+    case2_dir = os.path.join(base_dir, 'test_data', 'case2')
+    case2_authLogs = os.path.join(case2_dir, 'auth_logs.csv')
+    case2_dnsLogs = os.path.join(case2_dir, 'dns_logs.csv')
+    case2_firewallLogs = os.path.join(case2_dir, 'firewall_logs.csv')
+    case2_malwareLogs = os.path.join(case2_dir, 'malware_alerts.csv')
+
+    ev1_phishFlag = id.identifyPhishing(case2_dnsLogs)
+    ev1_bruteForceFlag = id.identifyBruteForce(case2_authLogs)
+    ev1_externalFlag = id.identifyFirewallExternal(case2_firewallLogs)
+    ev1_malwareFlag = id.identifyMalware(case2_malwareLogs)
+    ev1_flags = [ev1_phishFlag, ev1_bruteForceFlag, ev1_externalFlag, ev1_malwareFlag]
+    ev1_flagsCount = sum(1 for i in ev1_flags if i)
+
+    ev1_phishInfo = info.getPhishingInfo(case2_dnsLogs)
+    ev1_bruteForceInfo = info.getBruteForceInfo(case2_authLogs)
+    ev1_externalIPInfo = info.getFirewallExternalInfo(case2_firewallLogs)
+    ev1_malwareInfo = info.getMalwareInfo(case2_malwareLogs)
+
+
+
+    # build a multi-line summary text, placing snippets under each flag
+    lines = []
+    lines.append(f"{ev1_flagsCount} flag(s) were raised")
+    if ev1_flagsCount:
+        lines.append("Flags raised:")
+        if ev1_phishFlag:
+            lines.append("  Phishing")
+            lines.append(f"    Suspicious domain: {ev1_phishInfo[0][2]}")
+        if ev1_bruteForceFlag:
+            lines.append("  Brute force")
+            lines.append(f"    Suspected account targeted: {ev1_bruteForceInfo[0][2]}")
+        if ev1_externalFlag:
+            lines.append("  Firewall")
+            lines.append(f"    External IP {ev1_externalIPInfo[0][2]} targeting port {ev1_externalIPInfo[0][3]}")
+        if ev1_malwareFlag:
+            lines.append("  Malware")
+            lines.append(f"    Host involved: {ev1_malwareInfo[0][1]}")
+    
+    summary_text = "\n".join(lines)
+
+    return render_template('case2.html', users=users, summary_text=summary_text)
 
 if __name__ == '__main__':
     with app.app_context():

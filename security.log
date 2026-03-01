@@ -2157,3 +2157,220 @@ ValueError: Failed to decrypt data. The encryption key may have changed.
 2026-03-01 10:05:18,602 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:05:18] "GET /static/case2_firewall_styled_time(1).png HTTP/1.1" 200 -
 2026-03-01 10:05:18,603 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:05:18] "GET /static/case2_malware_styled_time(1).png HTTP/1.1" 200 -
 2026-03-01 10:07:23,309 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:07:23] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 10:10:48,905 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 10:10:48,906 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 10:10:48,907 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 10:10:50,441 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 10:10:50,445 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 10:13:32,069 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:32] "[32mGET /case1 HTTP/1.1[0m" 302 -
+2026-03-01 10:13:32,149 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:32] "GET /login?next=/case1 HTTP/1.1" 200 -
+2026-03-01 10:13:35,855 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 10:13:35,855 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 10:13:36,329 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:36] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 10:13:37,765 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:37] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 10:13:38,241 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:38] "GET /static/case1_malware_styled_time.png HTTP/1.1" 200 -
+2026-03-01 10:13:38,251 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:38] "GET /static/case1_auth_styled_time.png HTTP/1.1" 200 -
+2026-03-01 10:13:38,256 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:38] "GET /static/case1_dns_styled_time.png HTTP/1.1" 200 -
+2026-03-01 10:13:38,258 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:38] "GET /static/case1_firewall_styled_time(1).png HTTP/1.1" 200 -
+2026-03-01 10:13:41,934 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:41] "POST /case1/export HTTP/1.1" 200 -
+2026-03-01 10:13:42,098 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:13:42] "[31m[1mGET /case1/export HTTP/1.1[0m" 405 -
+2026-03-01 10:14:46,708 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:14:46] "[36mGET /static/case1_auth_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 10:14:55,121 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:14:55] "GET /static/case1_auth_styled_time.png HTTP/1.1" 200 -
+2026-03-01 10:17:07,370 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:17:07] "[36mGET /static/case1_auth_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 10:17:07,373 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:17:07] "[36mGET /static/case1_dns_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 10:17:07,374 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:17:07] "[36mGET /static/case1_firewall_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 10:17:07,375 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:17:07] "[36mGET /static/case1_malware_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 10:20:37,699 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:20:37] "[32mGET /register HTTP/1.1[0m" 302 -
+2026-03-01 10:20:37,721 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:20:37] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 10:20:43,169 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:20:43] "[32mGET /register HTTP/1.1[0m" 302 -
+2026-03-01 10:20:43,194 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:20:43] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 10:24:29,030 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 10:24:29,030 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 10:24:29,031 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 10:24:30,748 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 10:24:30,751 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 10:24:35,819 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:24:35] "GET /login?next=/case1 HTTP/1.1" 200 -
+2026-03-01 10:24:38,864 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 10:24:38,865 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:24:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 10:24:38,901 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:24:38] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 10:26:46,454 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 10:26:46,454 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 10:26:46,455 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 10:26:48,168 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 10:26:48,171 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 10:26:49,653 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:26:49] "GET /login?next=/case1 HTTP/1.1" 200 -
+2026-03-01 10:26:52,886 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 10:26:52,887 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:26:52] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 10:26:52,919 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:26:52] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 10:26:56,116 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:26:56] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 10:26:56,574 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:26:56] "[36mGET /static/case1_malware_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 10:26:56,575 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:26:56] "[36mGET /static/case1_dns_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 10:26:56,577 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:26:56] "[36mGET /static/case1_firewall_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 10:26:56,579 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:26:56] "[36mGET /static/case1_auth_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 10:27:27,015 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 10:27:27,016 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 10:27:27,017 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 10:27:28,629 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 10:27:28,631 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 10:27:33,350 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:33] "GET /init-db HTTP/1.1" 200 -
+2026-03-01 10:27:35,970 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:35] "GET /login HTTP/1.1" 200 -
+2026-03-01 10:27:39,219 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 10:27:39,221 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 10:27:39,257 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:39] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 10:27:40,852 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:40] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 10:27:42,180 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:42] "[36mGET /static/case1_firewall_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 10:27:42,183 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:42] "[36mGET /static/case1_malware_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 10:27:42,186 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:42] "[36mGET /static/case1_dns_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 10:27:42,188 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:42] "[36mGET /static/case1_auth_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 10:27:46,233 - healthcare_security - INFO - User 1 logged out
+2026-03-01 10:27:46,235 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:46] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 10:27:46,262 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:46] "GET /login HTTP/1.1" 200 -
+2026-03-01 10:27:48,593 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:27:48] "GET /register HTTP/1.1" 200 -
+2026-03-01 10:54:44,907 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 10:54:44,907 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 10:54:44,908 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 10:54:46,624 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 10:54:46,626 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 10:54:54,281 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:54:54] "GET /init-db HTTP/1.1" 200 -
+2026-03-01 10:54:57,818 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 10:54:57] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:00:43,625 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 11:00:43,626 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 11:00:43,627 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:00:45,309 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:00:45,312 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:01:03,391 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:01:03] "GET /init-db HTTP/1.1" 200 -
+2026-03-01 11:17:55,439 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 11:17:55,439 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 11:17:55,441 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:17:57,251 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:17:57,254 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:18:10,447 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:10] "GET /init-db HTTP/1.1" 200 -
+2026-03-01 11:18:39,196 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:39] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:18:43,695 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 11:18:43,696 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 11:18:43,730 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:43] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 11:18:44,920 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:44] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 11:18:45,439 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:45] "[36mGET /static/case1_malware_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 11:18:45,447 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:45] "[36mGET /static/case1_dns_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 11:18:45,448 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:45] "[36mGET /static/case1_auth_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 11:18:45,450 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:45] "[36mGET /static/case1_firewall_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 11:18:55,069 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:55] "[32mGET /login HTTP/1.1[0m" 302 -
+2026-03-01 11:18:55,098 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:18:55] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 11:19:00,997 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:19:00] "GET /init-db HTTP/1.1" 200 -
+2026-03-01 11:19:02,247 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:19:02] "[32mGET /login HTTP/1.1[0m" 302 -
+2026-03-01 11:19:02,278 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:19:02] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 11:19:03,817 - healthcare_security - INFO - User 1 logged out
+2026-03-01 11:19:03,817 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:19:03] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 11:19:03,843 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:19:03] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:19:09,831 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:19:09] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:22:40,856 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 11:22:40,856 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 11:22:40,857 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:22:42,570 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:22:42,572 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:22:45,650 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:22:45] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:22:49,756 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 11:22:49,757 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:22:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 11:22:49,894 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:22:49] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 11:22:52,560 - healthcare_security - INFO - User 1 logged out
+2026-03-01 11:22:52,561 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:22:52] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 11:22:52,596 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:22:52] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:22:56,029 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 11:22:56,030 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:22:56] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 11:22:56,061 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:22:56] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 11:22:58,170 - healthcare_security - INFO - User 1 logged out
+2026-03-01 11:22:58,171 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:22:58] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 11:22:58,197 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:22:58] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:23:24,230 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:23:24] "GET /register HTTP/1.1" 200 -
+2026-03-01 11:24:04,031 - healthcare_security - INFO - New user registered: 4 - wabeau
+2026-03-01 11:24:04,032 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:24:04] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-03-01 11:24:04,115 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:24:04] "GET /setup-2fa HTTP/1.1" 200 -
+2026-03-01 11:24:39,922 - healthcare_security - INFO - User 4 completed 2FA setup
+2026-03-01 11:24:39,923 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:24:39] "[32mPOST /complete-2fa-setup HTTP/1.1[0m" 302 -
+2026-03-01 11:24:39,945 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:24:39] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:24:50,705 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:24:50] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 11:24:50,750 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:24:50] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 11:24:55,565 - healthcare_security - INFO - User 4 completed 2FA authentication
+2026-03-01 11:24:55,567 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:24:55] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 11:24:55,603 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:24:55] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 11:24:57,762 - healthcare_security - WARNING - Unauthorized access attempt to /case1 by user 4
+2026-03-01 11:24:57,766 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:24:57] "[31m[1mGET /case1 HTTP/1.1[0m" 403 -
+2026-03-01 11:24:58,936 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:24:58] "GET / HTTP/1.1" 200 -
+2026-03-01 11:25:01,019 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:25:01] "[32mGET /login HTTP/1.1[0m" 302 -
+2026-03-01 11:25:01,046 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:25:01] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 11:25:01,990 - healthcare_security - INFO - User 4 logged out
+2026-03-01 11:25:01,991 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:25:01] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 11:25:02,018 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:25:02] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:33:42,554 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 11:33:42,786 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:33:44,519 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:33:44,521 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:34:52,829 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 11:34:53,042 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:34:55,199 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:34:55,200 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:35:37,626 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 11:35:37,626 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 11:35:37,629 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:35:39,323 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:35:39,325 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:35:46,186 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:35:46] "[35m[1mGET /init-db HTTP/1.1[0m" 500 -
+2026-03-01 11:38:08,486 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 11:38:08,486 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 11:38:08,490 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:38:09,918 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:38:09,919 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:38:11,544 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:38:11] "[35m[1mGET /init-db HTTP/1.1[0m" 500 -
+2026-03-01 11:38:14,360 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:38:14] "[35m[1mGET /init-db HTTP/1.1[0m" 500 -
+2026-03-01 11:39:52,374 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 11:39:52,565 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:39:54,436 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:39:54,439 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:39:57,338 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 11:39:57,338 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 11:39:57,339 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:39:59,087 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:39:59,089 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:40:01,568 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:40:01] "[35m[1mGET /init-db HTTP/1.1[0m" 500 -
+2026-03-01 11:40:45,298 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 11:40:45,504 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:40:51,569 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 11:40:51,569 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 11:40:51,570 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:40:52,818 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:40:52,819 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:41:02,355 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:41:02] "[35m[1mGET /init-db HTTP/1.1[0m" 500 -
+2026-03-01 11:41:30,988 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 11:41:31,185 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:41:33,385 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:41:33,387 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:41:38,176 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 11:41:38,176 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 11:41:38,177 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:41:39,893 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:41:39,895 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:41:42,464 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:41:42] "GET /init-db HTTP/1.1" 200 -
+2026-03-01 11:42:14,473 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:14] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:42:17,747 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 11:42:17,788 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:17] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 11:42:19,903 - healthcare_security - INFO - User 1 completed 2FA authentication
+2026-03-01 11:42:19,904 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:19] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 11:42:19,942 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:19] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 11:42:21,400 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:21] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 11:42:22,562 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:22] "[36mGET /static/case1_auth_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 11:42:22,572 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:22] "[36mGET /static/case1_firewall_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 11:42:22,577 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:22] "[36mGET /static/case1_malware_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 11:42:22,578 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:22] "[36mGET /static/case1_dns_styled_time.png HTTP/1.1[0m" 304 -
