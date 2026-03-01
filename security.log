@@ -1343,3 +1343,197 @@ ValueError: Failed to decrypt data. The encryption key may have changed.
 2026-03-01 05:05:45,019 - healthcare_security - INFO - User 4 completed 2FA authentication
 2026-03-01 05:05:45,023 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:45] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
 2026-03-01 05:05:45,054 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:05:45] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 05:49:23,211 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 05:49:23,211 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 05:49:23,213 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 05:49:25,849 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 05:49:25,854 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 05:49:44,894 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:49:44] "GET /init-db HTTP/1.1" 200 -
+2026-03-01 05:49:47,988 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:49:47] "GET /login HTTP/1.1" 200 -
+2026-03-01 05:49:55,346 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 05:49:55,348 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:49:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 05:49:55,430 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:49:55] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 05:50:10,536 - healthcare_security - INFO - User 1 logged out
+2026-03-01 05:50:10,537 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:50:10] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 05:50:10,588 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:50:10] "GET /login HTTP/1.1" 200 -
+2026-03-01 05:50:16,656 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 05:50:16,658 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:50:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 05:50:16,805 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 05:50:16,815 - healthcare_security - ERROR - Decryption error: 
+2026-03-01 05:50:16,845 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:50:16] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 05:50:18,745 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:50:18] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 05:50:18,747 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:50:18] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 05:50:18,865 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:50:18] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=j4Hr0dJRcEMsuNmRrTH7 HTTP/1.1" 200 -
+2026-03-01 05:50:18,876 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:50:18] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-01 05:51:12,694 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 05:51:12,694 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 05:51:12,696 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 05:51:15,556 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 05:51:15,561 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 05:51:18,945 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:18] "GET /init-db HTTP/1.1" 200 -
+2026-03-01 05:51:22,521 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:22] "GET /login HTTP/1.1" 200 -
+2026-03-01 05:51:28,695 - healthcare_security - INFO - User 2 logged in without 2FA
+2026-03-01 05:51:28,696 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 05:51:28,802 - healthcare_security - INFO - Action logged: VIEW on Patient with ID 0 by user 2
+2026-03-01 05:51:28,812 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:28] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 05:51:38,877 - healthcare_security - INFO - User 2 logged out
+2026-03-01 05:51:38,878 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:38] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 05:51:38,921 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:38] "GET /login HTTP/1.1" 200 -
+2026-03-01 05:51:45,008 - healthcare_security - INFO - User 3 logged in without 2FA
+2026-03-01 05:51:45,010 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 05:51:45,897 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 1 by user 3
+2026-03-01 05:51:45,906 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:45] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 05:51:54,371 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:54] "[33mGET /event/1 HTTP/1.1[0m" 404 -
+2026-03-01 05:51:55,450 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:55] "GET / HTTP/1.1" 200 -
+2026-03-01 05:51:56,908 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:56] "[32mGET /login HTTP/1.1[0m" 302 -
+2026-03-01 05:51:56,972 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 1 by user 3
+2026-03-01 05:51:56,974 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:56] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 05:51:59,140 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:51:59] "[33mGET /event/2 HTTP/1.1[0m" 404 -
+2026-03-01 05:52:02,416 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:52:02] "GET / HTTP/1.1" 200 -
+2026-03-01 05:52:05,444 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:52:05] "[32mGET /login HTTP/1.1[0m" 302 -
+2026-03-01 05:52:05,549 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 1 by user 3
+2026-03-01 05:52:05,551 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 05:52:05] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 06:11:05,945 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:11:05] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 06:11:06,311 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:11:06] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 06:11:06,314 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:11:06] "[33mGET /event/1 HTTP/1.1[0m" 404 -
+2026-03-01 06:11:08,193 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:11:08] "GET / HTTP/1.1" 200 -
+2026-03-01 06:11:09,578 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:11:09] "[32mGET /login HTTP/1.1[0m" 302 -
+2026-03-01 06:11:09,654 - healthcare_security - INFO - Action logged: VIEW on MedicalRecord with ID 1 by user 3
+2026-03-01 06:11:09,655 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:11:09] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 06:57:58,405 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 06:57:58,405 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 06:57:58,406 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 06:58:01,395 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 06:58:01,400 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 06:58:04,337 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:58:04] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 06:58:04,412 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:58:04] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 06:58:11,524 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 06:58:11,525 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:58:11] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 06:58:13,135 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:58:13] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2026-03-01 06:58:13,479 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:58:13] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 06:58:13,481 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:58:13] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 06:58:13,801 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:58:13] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=ZRX9vJVBwKa2cmuu0t2w HTTP/1.1" 200 -
+2026-03-01 06:58:13,803 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:58:13] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-01 06:59:08,015 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 06:59:08,016 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 06:59:08,018 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 06:59:10,999 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 06:59:11,003 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 06:59:11,103 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:59:11] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 06:59:11,313 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:59:11] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 06:59:15,483 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 06:59:15,484 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:59:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 06:59:15,734 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:59:15] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 06:59:19,164 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:59:19] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 06:59:22,425 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:59:22] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 06:59:23,438 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:59:23] "GET /case2 HTTP/1.1" 200 -
+2026-03-01 06:59:24,776 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 06:59:24] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:02:03,657 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 07:02:03,658 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 07:02:03,660 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 07:02:06,434 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 07:02:06,439 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 07:02:06,488 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:02:06] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 07:02:06,553 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:02:06] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 07:02:10,971 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 07:02:10,973 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:02:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 07:02:11,565 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:02:11] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:02:12,948 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:02:12] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 07:02:17,659 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:02:17] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:02:23,555 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:02:23] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 07:03:32,958 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:03:32] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:03:34,350 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:03:34] "GET /case2 HTTP/1.1" 200 -
+2026-03-01 07:05:52,977 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 07:05:53,233 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 07:05:59,766 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 07:05:59,766 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 07:05:59,768 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 07:06:02,634 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 07:06:02,640 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 07:06:02,673 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:06:02] "[32mGET /case2 HTTP/1.1[0m" 302 -
+2026-03-01 07:06:02,883 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:06:02] "GET /login?next=/case2 HTTP/1.1" 200 -
+2026-03-01 07:06:08,982 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 07:06:08,983 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:06:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 07:06:11,813 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:06:11] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:06:15,182 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:06:15] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 07:09:59,270 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 07:09:59,550 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 07:10:02,716 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 07:10:02,720 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 07:10:09,821 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 07:10:09,822 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 07:10:09,823 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 07:10:12,686 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 07:10:12,691 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 07:10:12,723 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:10:12] "[32mGET /case1 HTTP/1.1[0m" 302 -
+2026-03-01 07:10:12,837 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:10:12] "GET /login?next=/case1 HTTP/1.1" 200 -
+2026-03-01 07:10:16,959 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 07:10:16,961 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:10:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 07:10:17,479 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:10:17] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:10:18,249 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:10:18] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 07:10:40,929 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:10:40] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:10:42,075 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:10:42] "GET /case2 HTTP/1.1" 200 -
+2026-03-01 07:11:04,238 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:11:04] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:13:36,506 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 07:13:36,506 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 07:13:36,508 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 07:13:39,675 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 07:13:39,681 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 07:13:39,714 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:13:39] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 07:13:39,868 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:13:39] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 07:13:43,957 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 07:13:43,959 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:13:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 07:13:44,218 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:13:44] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:14:39,929 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 07:14:39,929 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 07:14:39,931 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 07:14:43,066 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 07:14:43,071 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 07:14:43,101 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:14:43] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 07:14:43,385 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:14:43] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 07:14:47,068 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 07:14:47,069 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:14:47] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 07:14:47,317 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:14:47] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:16:00,114 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 07:16:00,115 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 07:16:00,118 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 07:16:03,133 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 07:16:03,140 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 07:16:03,179 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:16:03] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 07:16:03,257 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:16:03] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 07:16:07,124 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 07:16:07,126 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:16:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 07:16:07,185 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:16:07] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:17:37,180 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 07:17:37,180 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 07:17:37,182 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 07:17:40,395 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 07:17:40,401 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 07:17:40,435 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:17:40] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2026-03-01 07:17:40,499 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:17:40] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-03-01 07:17:44,225 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 07:17:44,226 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:17:44] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 07:17:44,620 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:17:44] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 07:17:48,049 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:17:48] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 07:19:51,446 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 07:19:51,446 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 07:19:51,448 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 07:19:54,445 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 07:19:54,451 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 07:20:04,951 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:20:04] "[32mGET /case1 HTTP/1.1[0m" 302 -
+2026-03-01 07:20:05,544 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:20:05] "GET /login?next=/case1 HTTP/1.1" 200 -
+2026-03-01 07:20:10,183 - healthcare_security - INFO - User 1 logged in without 2FA
+2026-03-01 07:20:10,184 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:20:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 07:20:10,758 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 07:20:10] "GET /dashboard HTTP/1.1" 200 -

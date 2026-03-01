@@ -18,8 +18,18 @@ import warnings
 from sqlalchemy import exc as sa_exc
 import identifiers as id
 import info
+import sys
 warnings.simplefilter("default")
 warnings.simplefilter("ignore", category=sa_exc.LegacyAPIWarning)
+
+# CASE1_DIR = os.path.join("test_data", "Case1")
+# CASE2_DIR = os.path.join("test_data", "Case2")
+# os.makedirs(CASE1_DIR, exist_ok=True)
+# os.makedirs(CASE2_DIR, exist_ok=True)
+
+# def _read_json_file(path):
+#     with open(path, "r", encoding="utf-8") as f:
+#         return json.load(f)
 
 # Configure logging
 logging.basicConfig(
@@ -819,6 +829,20 @@ def init_db():
         db.session.rollback()
         return f'Error initializing database: {str(e)}', 500
 
+@app.route('/case1', methods=['GET', 'POST'])
+@login_required
+@role_required(['admin'])
+def case1():
+    users = User.query.all()
+    return render_template('case1.html', users=users)
+
+@app.route('/case2', methods=['GET', 'POST'])
+@login_required
+@role_required(['admin'])
+def case2():
+    users = User.query.all()
+    return render_template('case2.html', users=users)
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html', error_code=404, error_message="Page not found"), 404
@@ -837,8 +861,8 @@ def internal_server_error(e):
 #       - basically check if flags are raised by running the respective functions on
 #       - the respective logs. then count how many flags are raised
 base_dir = os.path.dirname(__file__)
-case1_dir = os.path.join(base_dir, 'test_data', 'Case 1')
-case2_dir = os.path.join(base_dir, 'test_data', 'Case 2')
+case1_dir = os.path.join(base_dir, 'test_data', 'Case1')
+case2_dir = os.path.join(base_dir, 'test_data', 'Case2')
 
 case1_authLogs = os.path.join(case1_dir, 'auth_logs.csv')
 case1_dnsLogs = os.path.join(case1_dir, 'dns_logs.csv')

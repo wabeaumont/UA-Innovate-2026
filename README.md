@@ -5,7 +5,7 @@
 ### 2.1. Ignore any errors related to "Getting requirements to build wheel"
 ### 3. Run webapp with "python app.py" and it will generate a secret key value for you if one has not already been set. Copy that value and stop the program with Control + C.
 ### 4. Set encryption key with "setx ENCRYPTION_KEY (key value)".
-### 4. Run webapp again with "python app.py"
+### 4. Delete .db file in instance folder and  run webapp again with "python app.py"
 ### 5. Initialize database by navigating to "http://127.0.0.1:5000/init-db"
 ### 5.1. Copy test account information for testing purposes and for default logins
 ### 5.2. Go to login page by clicking "Go to login page"
