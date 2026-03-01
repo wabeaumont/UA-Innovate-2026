@@ -829,12 +829,6 @@ def init_db():
         db.session.rollback()
         return f'Error initializing database: {str(e)}', 500
 
-@app.route('/case1', methods=['GET', 'POST'])
-@login_required
-@role_required(['admin'])
-def case1():
-    users = User.query.all()
-    return render_template('case1.html', users=users)
 
 @app.route('/case2', methods=['GET', 'POST'])
 @login_required
@@ -894,6 +888,38 @@ ev1_flagsCount = 0
 for i in ev1_flags:
     if i:
         ev1_flagsCount += 1
+
+@app.route('/case1', methods=['GET', 'POST'])
+@login_required
+@role_required(['admin'])
+def case1():
+    users = User.query.all()
+
+    # compute summary based on dataset flags (example logic)
+    base_dir = os.path.dirname(__file__)
+    case1_dir = os.path.join(base_dir, 'test_data', 'Case1')
+    case1_authLogs = os.path.join(case1_dir, 'auth_logs.csv')
+    case1_dnsLogs = os.path.join(case1_dir, 'dns_logs.csv')
+    case1_firewallLogs = os.path.join(case1_dir, 'firewall_logs.csv')
+    case1_malwareLogs = os.path.join(case1_dir, 'malware_alerts.csv')
+
+    ev1_phishFlag = id.identifyPhishing(case1_dnsLogs)
+    ev1_bruteForceFlag = id.identifyBruteForce(case1_authLogs)
+    ev1_externalFlag = id.identifyFirewallExternal(case1_firewallLogs)
+    ev1_malwareFlag = id.identifyMalware(case1_malwareLogs)
+    ev1_flags = [ev1_phishFlag, ev1_bruteForceFlag, ev1_externalFlag, ev1_malwareFlag]
+    ev1_flagsCount = sum(1 for i in ev1_flags if i)
+
+    # build a simple multi-line summary text
+    summary_text = (
+        f"Detected {ev1_flagsCount} event flag(s) in Case 1\n"
+        f"Phishing: {ev1_phishFlag}\n"
+        f"Brute force: {ev1_bruteForceFlag}\n"
+        f"External firewall: {ev1_externalFlag}\n"
+        f"Malware alerts: {ev1_malwareFlag}"
+    )
+
+    return render_template('case1.html', users=users, summary_text=summary_text)
 
 if __name__ == '__main__':
     with app.app_context():
