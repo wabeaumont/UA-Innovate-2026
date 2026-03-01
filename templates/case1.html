@@ -12,25 +12,32 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6 mb-4">
-                        <img src="{{ url_for('static', filename='placeholder.png') }}" class="img-fluid" alt="Graph 1">
+                        <img src="{{ url_for('static', filename='case1_auth_styled_time.png') }}" class="img-fluid" alt="Graph 1">
                     </div>
                     <div class="col-md-6 mb-4">
-                        <img src="{{ url_for('static', filename='placeholder.png') }}" class="img-fluid" alt="Graph 2">
+                        <img src="{{ url_for('static', filename='case1_dns_styled_time.png') }}" class="img-fluid" alt="Graph 2">
                     </div>
                     <div class="col-md-6 mb-4">
-                        <img src="{{ url_for('static', filename='placeholder.png') }}" class="img-fluid" alt="Graph 3">
+                        <img src="{{ url_for('static', filename='case1_firewall_styled_time(1).png') }}" class="img-fluid" alt="Graph 3">
                     </div>
                     <div class="col-md-6 mb-4">
-                        <img src="{{ url_for('static', filename='placeholder.png') }}" class="img-fluid" alt="Graph 4">
+                        <img src="{{ url_for('static', filename='case1_malware_styled_time.png') }}" class="img-fluid" alt="Graph 4">
                     </div>
                 </div>
 
                 <div class="mt-4">
                     <h6>Summary</h6>
-                    <div class="border p-3" style="white-space: pre-wrap;">
-                        {{ summary_text }}
-                    </div>
+                    <pre class="border p-3" style="white-space: pre-wrap;">
+{{ summary_text }}
+                    </pre>
                 </div>
+                {% if not for_pdf %}
+                <div class="card-footer text-end">
+                    <form method="POST" action="{{ url_for('export_case1') }}">
+                        <button type="submit" class="btn btn-secondary">EXPORT</button>
+                    </form>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

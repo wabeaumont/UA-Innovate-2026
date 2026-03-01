@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session, abort
+from flask import Flask, render_template, request, redirect, url_for, flash, session, abort, send_file, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -19,6 +19,10 @@ from sqlalchemy import exc as sa_exc
 import identifiers as id
 import info
 import sys
+try:
+    from weasyprint import HTML
+except Exception:
+    HTML = None
 warnings.simplefilter("default")
 warnings.simplefilter("ignore", category=sa_exc.LegacyAPIWarning)
 
@@ -837,6 +841,99 @@ def case2():
     users = User.query.all()
     return render_template('case2.html', users=users)
 
+
+# export endpoint for case1 report (renders the Case1 HTML to PDF)
+@app.route('/case1/export', methods=['POST'])
+@login_required
+@role_required(['admin'])
+def export_case1():
+    # If WeasyPrint isn't available, fallback to CSV download
+    if HTML is None:
+        # reproduce CSV fallback
+        base_dir = os.path.dirname(__file__)
+        case1_dir = os.path.join(base_dir, 'test_data', 'Case1')
+        case1_authLogs = os.path.join(case1_dir, 'auth_logs.csv')
+        case1_dnsLogs = os.path.join(case1_dir, 'dns_logs.csv')
+        case1_firewallLogs = os.path.join(case1_dir, 'firewall_logs.csv')
+        case1_malwareLogs = os.path.join(case1_dir, 'malware_alerts.csv')
+
+        ev1_phishFlag = id.identifyPhishing(case1_dnsLogs)
+        ev1_bruteForceFlag = id.identifyBruteForce(case1_authLogs)
+        ev1_externalFlag = id.identifyFirewallExternal(case1_firewallLogs)
+        ev1_malwareFlag = id.identifyMalware(case1_malwareLogs)
+
+        ev1_phishInfo = info.getPhishingInfo(case1_dnsLogs)
+        ev1_bruteForceInfo = info.getBruteForceInfo(case1_authLogs)
+        ev1_externalIPInfo = info.getFirewallExternalInfo(case1_firewallLogs)
+        ev1_malwareInfo = info.getMalwareInfo(case1_malwareLogs)
+
+        csv_content = "flag,details\n"
+        if ev1_phishFlag:
+            csv_content += f"phishing,{ev1_phishInfo}\n"
+        if ev1_bruteForceFlag:
+            csv_content += f"bruteforce,{ev1_bruteForceInfo}\n"
+        if ev1_externalFlag:
+            csv_content += f"firewall,{ev1_externalIPInfo}\n"
+        if ev1_malwareFlag:
+            csv_content += f"malware,{ev1_malwareInfo}\n"
+
+        response = make_response(csv_content)
+        response.headers['Content-Type'] = 'text/csv'
+        response.headers['Content-Disposition'] = 'attachment; filename=case1_report.csv'
+        return response
+
+    # Build the same view data and render HTML without the EXPORT button
+    users = User.query.all()
+    base_dir = os.path.dirname(__file__)
+    case1_dir = os.path.join(base_dir, 'test_data', 'Case1')
+    case1_authLogs = os.path.join(case1_dir, 'auth_logs.csv')
+    case1_dnsLogs = os.path.join(case1_dir, 'dns_logs.csv')
+    case1_firewallLogs = os.path.join(case1_dir, 'firewall_logs.csv')
+    case1_malwareLogs = os.path.join(case1_dir, 'malware_alerts.csv')
+
+    ev1_phishFlag = id.identifyPhishing(case1_dnsLogs)
+    ev1_bruteForceFlag = id.identifyBruteForce(case1_authLogs)
+    ev1_externalFlag = id.identifyFirewallExternal(case1_firewallLogs)
+    ev1_malwareFlag = id.identifyMalware(case1_malwareLogs)
+
+    ev1_phishInfo = info.getPhishingInfo(case1_dnsLogs)
+    ev1_bruteForceInfo = info.getBruteForceInfo(case1_authLogs)
+    ev1_externalIPInfo = info.getFirewallExternalInfo(case1_firewallLogs)
+    ev1_malwareInfo = info.getMalwareInfo(case1_malwareLogs)
+
+    # build the same summary text as the case1 view
+    ev1_flags = [ev1_phishFlag, ev1_bruteForceFlag, ev1_externalFlag, ev1_malwareFlag]
+    ev1_flagsCount = sum(1 for i in ev1_flags if i)
+    lines = []
+    lines.append(f"{ev1_flagsCount} flag(s) were raised")
+    if ev1_flagsCount:
+        lines.append("Flags raised:")
+        if ev1_phishFlag:
+            lines.append("  Phishing")
+            lines.append(f"    DNS Log Snippet: {ev1_phishInfo}")
+        if ev1_bruteForceFlag:
+            lines.append("  Brute force")
+            lines.append(f"    Auth Log Snippet: {ev1_bruteForceInfo}")
+        if ev1_externalFlag:
+            lines.append("  Firewall")
+            lines.append(f"    Firewall Log Snippet: {ev1_externalIPInfo}")
+        if ev1_malwareFlag:
+            lines.append("  Malware")
+            lines.append(f"    Malware Log Snippet: {ev1_malwareInfo}")
+    summary_text = "\n".join(lines)
+
+    # Render template with for_pdf=True so it hides the EXPORT button
+    html = render_template('case1.html', users=users, summary_text=summary_text, for_pdf=True)
+
+    # Convert rendered HTML to PDF
+    pdf_bytes = HTML(string=html, base_url=request.url_root).write_pdf()
+
+    buf = BytesIO()
+    buf.write(pdf_bytes)
+    buf.seek(0)
+
+    return send_file(buf, mimetype='application/pdf', as_attachment=True, download_name='case1_report.pdf')
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html', error_code=404, error_message="Page not found"), 404
@@ -910,14 +1007,32 @@ def case1():
     ev1_flags = [ev1_phishFlag, ev1_bruteForceFlag, ev1_externalFlag, ev1_malwareFlag]
     ev1_flagsCount = sum(1 for i in ev1_flags if i)
 
-    # build a simple multi-line summary text
-    summary_text = (
-        f"Detected {ev1_flagsCount} event flag(s) in Case 1\n"
-        f"Phishing: {ev1_phishFlag}\n"
-        f"Brute force: {ev1_bruteForceFlag}\n"
-        f"External firewall: {ev1_externalFlag}\n"
-        f"Malware alerts: {ev1_malwareFlag}"
-    )
+    ev1_phishInfo = info.getPhishingInfo(case1_dnsLogs)
+    ev1_bruteForceInfo = info.getBruteForceInfo(case1_authLogs)
+    ev1_externalIPInfo = info.getFirewallExternalInfo(case1_firewallLogs)
+    ev1_malwareInfo = info.getMalwareInfo(case1_malwareLogs)
+
+
+
+    # build a multi-line summary text, placing snippets under each flag
+    lines = []
+    lines.append(f"{ev1_flagsCount} flag(s) were raised")
+    if ev1_flagsCount:
+        lines.append("Flags raised:")
+        if ev1_phishFlag:
+            lines.append("  Phishing")
+            lines.append(f"    Suspicious domain: {ev1_phishInfo[0][2]}")
+        if ev1_bruteForceFlag:
+            lines.append("  Brute force")
+            lines.append(f"    Suspected account targeted: {ev1_bruteForceInfo[0][2]}")
+        if ev1_externalFlag:
+            lines.append("  Firewall")
+            lines.append(f"    External IP {ev1_externalIPInfo[0][2]} targeting port {ev1_externalIPInfo[0][3]}")
+        if ev1_malwareFlag:
+            lines.append("  Malware")
+            lines.append(f"    Host involved: {ev1_malwareInfo[0][1]}")
+    
+    summary_text = "\n".join(lines)
 
     return render_template('case1.html', users=users, summary_text=summary_text)
 
