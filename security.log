@@ -2374,3 +2374,201 @@ ValueError: Failed to decrypt data. The encryption key may have changed.
 2026-03-01 11:42:22,572 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:22] "[36mGET /static/case1_firewall_styled_time(1).png HTTP/1.1[0m" 304 -
 2026-03-01 11:42:22,577 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:22] "[36mGET /static/case1_malware_styled_time.png HTTP/1.1[0m" 304 -
 2026-03-01 11:42:22,578 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:42:22] "[36mGET /static/case1_dns_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 11:56:19,113 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 11:56:19,113 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 11:56:19,114 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:56:20,935 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:56:20,937 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:56:27,162 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:56:27] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:56:31,127 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:56:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 11:56:31,156 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:56:31] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 11:56:49,109 - healthcare_security - INFO - User 1 completed 2FA authentication
+2026-03-01 11:56:49,111 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:56:49] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 11:56:49,146 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:56:49] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 11:56:50,728 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:56:50] "[35m[1mGET /case1 HTTP/1.1[0m" 500 -
+2026-03-01 11:56:51,562 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:56:51] "[36mGET /case1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 11:56:51,563 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:56:51] "[36mGET /case1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 11:56:51,789 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:56:51] "GET /case1?__debugger__=yes&cmd=resource&f=console.png&s=jdI4xKjNqjXKeUdsIKOw HTTP/1.1" 200 -
+2026-03-01 11:56:51,791 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:56:51] "[36mGET /case1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-01 11:57:30,253 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 11:57:30,487 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:57:32,353 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:57:32,355 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:57:36,979 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 11:57:36,979 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 11:57:36,980 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 11:57:38,671 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 11:57:38,673 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 11:57:42,466 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:57:42] "GET /login HTTP/1.1" 200 -
+2026-03-01 11:57:46,230 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:57:46] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 11:57:46,381 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:57:46] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 11:57:50,154 - healthcare_security - INFO - User 1 completed 2FA authentication
+2026-03-01 11:57:50,155 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:57:50] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 11:57:50,194 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:57:50] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 11:57:51,384 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:57:51] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 11:57:51,842 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:57:51] "[36mGET /static/case1_auth_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 11:57:51,852 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:57:51] "[36mGET /static/case1_dns_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 11:57:51,853 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:57:51] "[36mGET /static/case1_firewall_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 11:57:51,855 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 11:57:51] "[36mGET /static/case1_malware_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 12:02:52,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 12:02:52,324 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:02:54,562 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:02:54,564 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:03:02,092 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 12:03:02,092 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 12:03:02,093 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:03:03,994 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:03:03,996 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:03:07,215 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:07] "GET / HTTP/1.1" 200 -
+2026-03-01 12:03:08,372 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:08] "GET /login HTTP/1.1" 200 -
+2026-03-01 12:03:13,214 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:13] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 12:03:13,319 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:13] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 12:03:18,149 - healthcare_security - INFO - User 1 completed 2FA authentication
+2026-03-01 12:03:18,150 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:18] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 12:03:18,241 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:18] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 12:03:19,576 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:19] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 12:03:20,930 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:20] "[36mGET /static/case1_dns_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 12:03:20,932 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:20] "[36mGET /static/case1_malware_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 12:03:20,936 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:20] "[36mGET /static/case1_firewall_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 12:03:20,937 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:03:20] "[36mGET /static/case1_auth_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 12:03:57,256 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 12:03:57,478 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:04:02,978 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 12:04:02,979 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 12:04:02,980 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:04:04,695 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:04:04,696 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:04:09,227 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:04:09] "GET /login HTTP/1.1" 200 -
+2026-03-01 12:04:13,004 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:04:13] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 12:04:13,037 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:04:13] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 12:04:16,562 - healthcare_security - INFO - User 1 completed 2FA authentication
+2026-03-01 12:04:16,564 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:04:16] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 12:04:16,598 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:04:16] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 12:04:17,873 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:04:17] "GET /case1 HTTP/1.1" 200 -
+2026-03-01 12:04:19,242 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:04:19] "[36mGET /static/case1_malware_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 12:04:19,250 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:04:19] "[36mGET /static/case1_auth_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 12:04:19,251 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:04:19] "[36mGET /static/case1_firewall_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 12:04:19,253 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:04:19] "[36mGET /static/case1_dns_styled_time.png HTTP/1.1[0m" 304 -
+2026-03-01 12:06:37,752 - healthcare_security - INFO - User 1 logged out
+2026-03-01 12:06:37,754 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:37] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 12:06:37,780 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:37] "GET /login HTTP/1.1" 200 -
+2026-03-01 12:06:41,778 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:41] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 12:06:41,803 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:41] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 12:06:47,659 - healthcare_security - INFO - User 1 completed 2FA authentication
+2026-03-01 12:06:47,660 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:47] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 12:06:47,693 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:47] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 12:06:48,617 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:48] "[35m[1mGET /case2 HTTP/1.1[0m" 500 -
+2026-03-01 12:06:48,743 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:48] "GET /case2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-03-01 12:06:48,747 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:48] "GET /case2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-03-01 12:06:48,836 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:48] "GET /case2?__debugger__=yes&cmd=resource&f=console.png&s=19fDgsXpjkyNsEWe2xLY HTTP/1.1" 200 -
+2026-03-01 12:06:48,837 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:06:48] "GET /case2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-03-01 12:07:32,774 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 12:07:32,967 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:07:35,459 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:07:35,463 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:08:40,783 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 12:08:40,951 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:08:42,540 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:08:42,542 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:09:20,727 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 12:09:20,910 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:09:22,738 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:09:22,740 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:09:27,735 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 12:09:27,736 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 12:09:27,736 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:09:29,430 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:09:29,431 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:09:34,440 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:09:34] "GET /login HTTP/1.1" 200 -
+2026-03-01 12:09:38,306 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:09:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 12:09:38,342 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:09:38] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 12:09:42,046 - healthcare_security - INFO - User 1 completed 2FA authentication
+2026-03-01 12:09:42,047 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:09:42] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 12:09:42,080 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:09:42] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 12:09:43,163 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:09:43] "[35m[1mGET /case2 HTTP/1.1[0m" 500 -
+2026-03-01 12:09:43,460 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:09:43] "[36mGET /case2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 12:09:43,462 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:09:43] "[36mGET /case2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 12:09:44,381 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:09:44] "GET /case2?__debugger__=yes&cmd=resource&f=console.png&s=VYBfLNDCKP8PX6wGadYg HTTP/1.1" 200 -
+2026-03-01 12:09:44,382 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:09:44] "[36mGET /case2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-01 12:11:57,115 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 12:11:57,297 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:11:59,123 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:11:59,124 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:12:16,104 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 12:12:16,104 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 12:12:16,105 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:12:17,951 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:12:17,953 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:12:17,962 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:17] "[32mGET /case2 HTTP/1.1[0m" 302 -
+2026-03-01 12:12:17,995 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:17] "GET /login?next=/case2 HTTP/1.1" 200 -
+2026-03-01 12:12:22,044 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 12:12:22,078 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:22] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 12:12:25,370 - healthcare_security - INFO - User 1 completed 2FA authentication
+2026-03-01 12:12:25,371 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:25] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 12:12:25,406 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:25] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 12:12:26,123 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:26] "[35m[1mGET /case2 HTTP/1.1[0m" 500 -
+2026-03-01 12:12:26,407 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:26] "[36mGET /case2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-01 12:12:26,411 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:26] "[36mGET /case2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-01 12:12:26,477 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:26] "GET /case2?__debugger__=yes&cmd=resource&f=console.png&s=wlfzpgAptwdH7KWmcAWN HTTP/1.1" 200 -
+2026-03-01 12:12:26,479 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:12:26] "[36mGET /case2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-03-01 12:13:06,178 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 12:13:06,403 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:13:08,276 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:13:08,278 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:13:11,084 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 12:13:11,084 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 12:13:11,085 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:13:12,661 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:13:12,663 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:13:12,679 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:12] "[32mGET /case2 HTTP/1.1[0m" 302 -
+2026-03-01 12:13:12,717 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:12] "GET /login?next=/case2 HTTP/1.1" 200 -
+2026-03-01 12:13:16,170 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 12:13:16,197 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:16] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 12:13:19,707 - healthcare_security - INFO - User 1 completed 2FA authentication
+2026-03-01 12:13:19,709 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:19] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 12:13:19,859 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:19] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 12:13:26,224 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:26] "GET /case2 HTTP/1.1" 200 -
+2026-03-01 12:13:26,753 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:26] "GET /static/case2_dns_styled_time(1).png HTTP/1.1" 200 -
+2026-03-01 12:13:26,762 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:26] "GET /static/case2_malware_styled_time(1).png HTTP/1.1" 200 -
+2026-03-01 12:13:26,763 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:26] "GET /static/case2_auth_styled_time(1).png HTTP/1.1" 200 -
+2026-03-01 12:13:26,764 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:13:26] "GET /static/case2_firewall_styled_time(1).png HTTP/1.1" 200 -
+2026-03-01 12:14:15,442 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 12:14:15,632 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:14:17,384 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:14:17,387 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:14:54,547 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 12:14:54,724 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:14:56,483 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:14:56,485 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:15:06,542 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willi\\Documents\\UAB\\Competitions\\new 2\\UA-Innovate-2026\\app.py', reloading
+2026-03-01 12:15:06,676 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:15:08,583 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:15:08,585 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:15:13,690 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-01 12:15:13,690 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-01 12:15:13,692 - werkzeug - INFO -  * Restarting with stat
+2026-03-01 12:15:15,300 - werkzeug - WARNING -  * Debugger is active!
+2026-03-01 12:15:15,301 - werkzeug - INFO -  * Debugger PIN: 146-063-316
+2026-03-01 12:15:27,290 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:27] "[32mGET /case2 HTTP/1.1[0m" 302 -
+2026-03-01 12:15:27,327 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:27] "GET /login?next=/case2 HTTP/1.1" 200 -
+2026-03-01 12:15:31,801 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-01 12:15:31,829 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:31] "GET /verify-2fa HTTP/1.1" 200 -
+2026-03-01 12:15:37,142 - healthcare_security - INFO - User 1 completed 2FA authentication
+2026-03-01 12:15:37,142 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:37] "[32mPOST /verify-2fa HTTP/1.1[0m" 302 -
+2026-03-01 12:15:37,175 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:37] "GET /dashboard HTTP/1.1" 200 -
+2026-03-01 12:15:40,049 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:40] "GET /case2 HTTP/1.1" 200 -
+2026-03-01 12:15:40,416 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:40] "[36mGET /static/case2_malware_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 12:15:40,419 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:40] "[36mGET /static/case2_dns_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 12:15:40,420 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:40] "[36mGET /static/case2_firewall_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 12:15:40,422 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:40] "[36mGET /static/case2_auth_styled_time(1).png HTTP/1.1[0m" 304 -
+2026-03-01 12:15:59,613 - healthcare_security - INFO - User 1 logged out
+2026-03-01 12:15:59,614 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:59] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-01 12:15:59,642 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2026 12:15:59] "GET /login HTTP/1.1" 200 -
